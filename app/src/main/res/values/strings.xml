@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Activity Tracker</string>
-    <string name="slogan">Пожалуй лучший фитнес трекер в ДВФУ</string>
-    <string name="sub_slogan">Созданный студентами 2-ого курса</string>
+    <string name="slogan">Пожалуй лучший\nфитнес трекер в ДВФУ</string>
+    <string name="sub_slogan">Созданный студентами\n2-ого курса</string>
+    <string name="registration_button_text">Зарегистрироваться</string>
+    <string name="login_button_text">Уже есть аккаунт?</string>
 </resources>
