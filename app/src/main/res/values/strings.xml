@@ -4,4 +4,7 @@
     <string name="sub_slogan">Созданный студентами\n2-ого курса</string>
     <string name="registration_button_text">Зарегистрироваться</string>
     <string name="login_button_text">Уже есть аккаунт?</string>
+    <string name="bg_description">TODO</string>
+    <string name="logo_description">TODO</string>
+    <string name="title_description">TODO</string>
 </resources>
