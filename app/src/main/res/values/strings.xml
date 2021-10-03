@@ -20,4 +20,11 @@
     <string name="sex_man">Мужской</string>
     <string name="sex_woman">Женский</string>
     <string name="sex_other">Другое</string>
+    <string name="important_info">Нажимая на кнопку, вы соглашаетесь с
+        <a href="http://www.google.com">политикой конфиденциальности</a>
+        и обработки персональных
+        данных, а также принимаете
+        <a href="http://www.google.com">пользовательское соглашение</a></string>
+    <string name="mono_logo_description">TODO</string>
+    <string name="mono_title_description">TODO</string>
 </resources>

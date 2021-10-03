@@ -1,6 +1,7 @@
 package ru.fefu.activitytracker
 
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -20,6 +21,7 @@ class RegistrationScreenActivity: AppCompatActivity() {
 
         setupSexDropDownMenu()
 
+        enableLinks()
     }
 
     private fun setupSexDropDownMenu() {
@@ -32,5 +34,9 @@ class RegistrationScreenActivity: AppCompatActivity() {
 
         val adapter = ArrayAdapter(baseContext ,R.layout.list_item, sexes)
         (inputLayout.editText as? MaterialAutoCompleteTextView)?.setAdapter(adapter)
+    }
+
+    private fun enableLinks() {
+        binding.importantInfo.movementMethod = LinkMovementMethod.getInstance()
     }
 }

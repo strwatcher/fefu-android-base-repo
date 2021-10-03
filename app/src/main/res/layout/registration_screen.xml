@@ -152,11 +152,53 @@
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
         android:text="@string/continue_button_text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/importantInfo"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollableInputFields"
-        app:layout_constraintVertical_bias="0.5" />
+        />
+
+    <TextView
+        android:id="@+id/importantInfo"
+
+        style="@style/Text"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/important_info"
+        android:textColor="#000000"
+        android:textColorLink="#4B09F3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continueButton" />
+
+    <ImageView
+        android:id="@+id/appTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_mono_title"
+        app:layout_constraintBottom_toTopOf="@+id/appLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/importantInfo"
+        android:contentDescription="@string/mono_title_description" />
+
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/ic_mono_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        android:contentDescription="@string/mono_logo_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
