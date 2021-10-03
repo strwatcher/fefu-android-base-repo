@@ -14,11 +14,19 @@ class TitleScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         bindLoginButton()
+        bindRegistrationButton()
     }
 
     private fun bindLoginButton() {
         binding.loginButton.setOnClickListener {
             val intent = Intent(this, LoginScreenActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun bindRegistrationButton() {
+        binding.registrationButton.setOnClickListener {
+            val intent = Intent(this, RegistrationScreenActivity::class.java)
             startActivity(intent)
         }
     }

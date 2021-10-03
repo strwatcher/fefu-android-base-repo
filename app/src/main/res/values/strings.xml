@@ -13,4 +13,11 @@
     <string name="password_hint">Пароль</string>
     <string name="continue_button_text">Продолжить</string>
     <string name="riders_image_description">TODO</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="duplicate_password_hint">Повторите пароль</string>
+    <string name="name_hint">Имя или никнейм</string>
+    <string name="sex_hint">Пол</string>
+    <string name="sex_man">Мужской</string>
+    <string name="sex_woman">Женский</string>
+    <string name="sex_other">Другое</string>
 </resources>

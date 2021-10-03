@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Activity">
+
         <activity
             android:name=".TitleScreenActivity"
             android:exported="true">
@@ -20,6 +21,10 @@
 
         <activity
             android:name=".LoginScreenActivity"
+            android:exported="true"
+            />
+        <activity
+            android:name=".RegistrationScreenActivity"
             android:exported="true"
             />
 

@@ -13,7 +13,7 @@ class LoginScreenActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         binding.goBackButton.setOnClickListener {
-            this.finish()
+            finish()
         }
     }
 }
