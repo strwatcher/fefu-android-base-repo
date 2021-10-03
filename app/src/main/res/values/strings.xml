@@ -7,4 +7,10 @@
     <string name="bg_description">TODO</string>
     <string name="logo_description">TODO</string>
     <string name="title_description">TODO</string>
+    <string name="back_button_description">TODO</string>
+    <string name="login_screen_title">Вход</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="continue_button_text">Продолжить</string>
+    <string name="riders_image_description">TODO</string>
 </resources>
