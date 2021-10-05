@@ -6,7 +6,6 @@
 
     <ImageView
         android:id="@+id/topBackgroundImage"
-
         android:src="@drawable/ic_top_background"
         android:scaleType="fitXY"
         android:contentDescription="@string/bg_description"
@@ -86,17 +85,15 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/registrationButton"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/FilledButton"
 
-        android:layout_marginHorizontal="18dp"
         android:text="@string/registration_button_text"
-        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subSlogan"
-        app:layout_constraintVertical_bias="0.215" />
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
@@ -104,7 +101,6 @@
         style="@style/TextButton"
 
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:text="@string/login_button_text"
         android:textSize="16sp"

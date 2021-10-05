@@ -4,15 +4,10 @@
     <string name="sub_slogan">Созданный студентами\n2-ого курса</string>
     <string name="registration_button_text">Зарегистрироваться</string>
     <string name="login_button_text">Уже есть аккаунт?</string>
-    <string name="bg_description">TODO</string>
-    <string name="logo_description">TODO</string>
-    <string name="title_description">TODO</string>
-    <string name="back_button_description">TODO</string>
     <string name="login_screen_title">Вход</string>
     <string name="login_hint">Логин</string>
     <string name="password_hint">Пароль</string>
     <string name="continue_button_text">Продолжить</string>
-    <string name="riders_image_description">TODO</string>
     <string name="registration_title">Регистрация</string>
     <string name="duplicate_password_hint">Повторите пароль</string>
     <string name="name_hint">Имя или никнейм</string>
@@ -25,6 +20,11 @@
         и обработки персональных
         данных, а также принимаете
         <a href="http://www.google.com">пользовательское соглашение</a></string>
-    <string name="mono_logo_description">TODO</string>
-    <string name="mono_title_description">TODO</string>
+    <string name="mono_logo_description">одноцветный логотип</string>
+    <string name="mono_title_description">одноцветное название</string>
+    <string name="riders_image_description">велосипедисты</string>
+    <string name="bg_description">волны</string>
+    <string name="logo_description">логотип</string>
+    <string name="title_description">название</string>
+    <string name="back_button_description">назад</string>
 </resources>
