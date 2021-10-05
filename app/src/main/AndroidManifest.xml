@@ -26,6 +26,7 @@
         <activity
             android:name=".RegistrationScreenActivity"
             android:exported="true"
+            android:windowSoftInputMode="adjustNothing"
             />
 
     </application>

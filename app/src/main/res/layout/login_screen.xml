@@ -69,6 +69,7 @@
 
         style="@style/FilledButton"
 
+        android:layout_marginTop="40dp"
         android:text="@string/continue_button_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
