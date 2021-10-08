@@ -31,11 +31,12 @@
         android:id="@+id/scrollableInputFields"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/continueButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationTitle">
+        app:layout_constraintTop_toBottomOf="@+id/registrationTitle"
+        tools:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -122,6 +123,7 @@
                 android:hint="@string/sex_hint"
                 app:endIconDrawable="@drawable/ic_arrow_head"
 
+                app:layout_constraintBottom_toTopOf="@id/continueButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/nameInputLayout">
@@ -135,69 +137,67 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueButton"
+
+                style="@style/FilledButton"
+
+                android:layout_marginTop="40dp"
+                android:text="@string/continue_button_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sexInputLayout" />
+
+            <TextView
+                android:id="@+id/importantInfo"
+
+                style="@style/Text"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/important_info"
+                android:textColor="#000000"
+                android:textColorLink="#4B09F3"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/appTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/continueButton"
+                tools:ignore="LinkPurposeUnclearCheck" />
+
+            <ImageView
+                android:id="@+id/appTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/mono_title_description"
+                android:src="@drawable/ic_mono_title"
+                app:layout_constraintBottom_toTopOf="@+id/appLogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/importantInfo" />
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="52dp"
+                android:contentDescription="@string/mono_logo_description"
+                android:src="@drawable/ic_mono_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appTitle" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/continueButton"
-
-        style="@style/FilledButton"
-
-        android:layout_marginTop="40dp"
-        android:text="@string/continue_button_text"
-        app:layout_constraintBottom_toTopOf="@+id/importantInfo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollableInputFields" />
-
-    <TextView
-        android:id="@+id/importantInfo"
-
-        style="@style/Text"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="15dp"
-        android:text="@string/important_info"
-        android:textColor="#000000"
-        android:textColorLink="#4B09F3"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/appTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/continueButton"
-        tools:ignore="LinkPurposeUnclearCheck" />
-
-    <ImageView
-        android:id="@+id/appTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:contentDescription="@string/mono_title_description"
-        android:src="@drawable/ic_mono_title"
-        app:layout_constraintBottom_toTopOf="@+id/appLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/importantInfo"
-        app:layout_constraintVertical_bias="0.628" />
-
-    <ImageView
-        android:id="@+id/appLogo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="52dp"
-        android:contentDescription="@string/mono_logo_description"
-        android:src="@drawable/ic_mono_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
