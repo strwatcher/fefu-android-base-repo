@@ -3,11 +3,32 @@
     package="ru.fefu.activitytracker">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Activity" />
+        android:theme="@style/Theme.Activity">
+
+        <activity
+            android:name=".TitleScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginScreenActivity"
+            android:exported="true"
+            />
+        <activity
+            android:name=".RegistrationScreenActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing"
+            />
+
+    </application>
 
 </manifest>
