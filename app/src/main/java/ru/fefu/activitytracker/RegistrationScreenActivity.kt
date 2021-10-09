@@ -5,14 +5,14 @@ import android.text.method.LinkMovementMethod
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import ru.fefu.activitytracker.databinding.RegistrationScreenBinding
+import ru.fefu.activitytracker.databinding.ActivityRegistrationScreenBinding
 
 class RegistrationScreenActivity: AppCompatActivity() {
-    private lateinit var binding: RegistrationScreenBinding
+    private lateinit var binding: ActivityRegistrationScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RegistrationScreenBinding.inflate(layoutInflater)
+        binding = ActivityRegistrationScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.goBackButton.setOnClickListener {
