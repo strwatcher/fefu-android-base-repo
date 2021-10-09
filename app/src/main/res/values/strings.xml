@@ -29,4 +29,7 @@
     <string name="back_button_description">назад</string>
     <string name="nav_bar_activity_item">Активность</string>
     <string name="nav_bar_profile_item">Профиль</string>
+    <string name="my_activities_tab_title">Мои</string>
+    <string name="users_activities_tab_title">Пользователей</string>
+    <string name="profile_tab_content">Профиль</string>
 </resources>
