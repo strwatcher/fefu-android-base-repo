@@ -13,5 +13,12 @@ class ActionsScreenActivity: AppCompatActivity(){
         _binding = ActivityActionsScreenBinding.inflate(layoutInflater)
 
         setContentView(_binding.root)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.fcMainView, ActionsFragment.newInstance(), "MainView")
+                commit()
+            }
+        }
     }
 }

@@ -27,4 +27,6 @@
     <string name="logo_description">логотип</string>
     <string name="title_description">название</string>
     <string name="back_button_description">назад</string>
+    <string name="nav_bar_activity_item">Активность</string>
+    <string name="nav_bar_profile_item">Профиль</string>
 </resources>
