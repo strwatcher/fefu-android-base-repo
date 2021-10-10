@@ -51,7 +51,7 @@ class ActionsFragmentAdapter(fragment: Fragment): FragmentStateAdapter(fragment)
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
-        return MyActionsFragment.newInstance(
+        return ActionsFillingFragment.newInstance(
             if (position == Tabs.My.position)
                 Tabs.My.message
             else

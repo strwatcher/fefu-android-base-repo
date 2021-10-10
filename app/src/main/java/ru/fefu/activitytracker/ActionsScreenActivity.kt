@@ -26,7 +26,7 @@ class ActionsScreenActivity: AppCompatActivity(){
 
     private fun loadStartTab() {
         supportFragmentManager.beginTransaction().apply {
-            add(R.id.fcMainView, ActionsFragment.newInstance(), ActionTag)
+            add(R.id.ContentView, ActionsFragment.newInstance(), ActionTag)
             _currentTag = ActionTag
             commit()
         }
@@ -53,7 +53,7 @@ class ActionsScreenActivity: AppCompatActivity(){
                     show(nextFragment)
                 }
                 else {
-                    add(R.id.fcMainView, ProfileFragment.newInstance(), _currentTag)
+                    add(R.id.ContentView, ProfileFragment.newInstance(), _currentTag)
                 }
 
                 commit()

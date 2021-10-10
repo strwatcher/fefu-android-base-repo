@@ -6,6 +6,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tlTabs"
+
+        app:tabTextAppearance="@style/CapsOffedTabs"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -13,6 +16,7 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
+        android:background="#F0F0F0"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

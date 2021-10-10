@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import ru.fefu.activitytracker.databinding.ActivityLoginScreenBinding
 
 class LoginScreenActivity: AppCompatActivity() {
-    private lateinit var binding: ActivityLoginScreenBinding
+    private lateinit var _binding: ActivityLoginScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginScreenBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        _binding = ActivityLoginScreenBinding.inflate(layoutInflater)
+        setContentView(_binding.root)
 
-        binding.goBackButton.setOnClickListener {
+        _binding.goBackButton.setOnClickListener {
             finish()
         }
     }

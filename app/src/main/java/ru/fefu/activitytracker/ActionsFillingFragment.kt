@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.fefu.activitytracker.databinding.FragmentMyActionsBinding
+import ru.fefu.activitytracker.databinding.FragmentActionsFillingBinding
 
-class MyActionsFragment: Fragment() {
+class ActionsFillingFragment: Fragment() {
     lateinit var message: String
-    private lateinit var binding: FragmentMyActionsBinding
+    private lateinit var _binding: FragmentActionsFillingBinding
     companion object {
-        fun newInstance(message: String): MyActionsFragment {
-            val fragment = MyActionsFragment()
+        fun newInstance(message: String): ActionsFillingFragment {
+            val fragment = ActionsFillingFragment()
             fragment.message = message
             return fragment
         }
@@ -23,11 +23,11 @@ class MyActionsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentMyActionsBinding.inflate(layoutInflater)
+        _binding = FragmentActionsFillingBinding.inflate(layoutInflater)
 
-        binding.textView.text = message
+        _binding.textView.text = message
 
-        return binding.root
+        return _binding.root
     }
 
 
