@@ -19,7 +19,8 @@
         <a href="https://www.placecage.com/256/256">политикой конфиденциальности</a>
         и обработки персональных
         данных, а также принимаете
-        <a href="https://www.placecage.com/256/256">пользовательское соглашение</a></string>
+        <a href="https://www.placecage.com/256/256">пользовательское соглашение</a>
+    </string>
     <string name="mono_logo_description">одноцветный логотип</string>
     <string name="mono_title_description">одноцветное название</string>
     <string name="riders_image_description">велосипедисты</string>
@@ -32,4 +33,6 @@
     <string name="my_activities_tab_title">Мои</string>
     <string name="users_activities_tab_title">Пользователей</string>
     <string name="profile_tab_content">Профиль</string>
+    <string name="my_actions_text">Мои активности</string>
+    <string name="users_activities_text">Активности пользователей</string>
 </resources>

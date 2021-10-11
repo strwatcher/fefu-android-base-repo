@@ -1,19 +1,21 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.screens.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ru.fefu.activitytracker.databinding.ActivityActionsScreenBinding
+import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.databinding.ActivityMainScreenBinding
+
 
 const val ActionTag = "Actions"
 const val ProfileTag = "Profile"
 
-class ActionsScreenActivity: AppCompatActivity(){
-    private lateinit var _binding: ActivityActionsScreenBinding
+class MainScreenActivity: AppCompatActivity() {
+    private lateinit var _binding: ActivityMainScreenBinding
     private lateinit var _currentTag: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityActionsScreenBinding.inflate(layoutInflater)
+        _binding = ActivityMainScreenBinding.inflate(layoutInflater)
 
         setContentView(_binding.root)
 
@@ -51,8 +53,7 @@ class ActionsScreenActivity: AppCompatActivity(){
 
                 if (nextFragment != null) {
                     show(nextFragment)
-                }
-                else {
+                } else {
                     add(R.id.ContentView, ProfileFragment.newInstance(), _currentTag)
                 }
 
@@ -62,3 +63,4 @@ class ActionsScreenActivity: AppCompatActivity(){
         }
     }
 }
+

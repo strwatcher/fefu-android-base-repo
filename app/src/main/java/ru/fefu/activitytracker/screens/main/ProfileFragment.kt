@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.screens.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import ru.fefu.activitytracker.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
-    lateinit var binding: FragmentProfileBinding
+    private lateinit var _binding: FragmentProfileBinding
 
     companion object {
         fun newInstance(): ProfileFragment {
@@ -22,8 +22,8 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentProfileBinding.inflate(layoutInflater)
-        return binding.root
+        _binding = FragmentProfileBinding.inflate(layoutInflater)
+        return _binding.root
     }
 
 }

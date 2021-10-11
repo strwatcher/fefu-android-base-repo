@@ -1,17 +1,17 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.screens.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
+import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActionsBinding
 
-enum class Tabs(val position: Int, val message: String) {
-    My(0, "Мои активности"),
-    Users(1, "Активности пользователей"),
+enum class Tabs(val position: Int) {
+    My(0),
+    Users(1),
 }
 
 class ActionsFragment: Fragment() {
@@ -44,18 +44,5 @@ class ActionsFragment: Fragment() {
                 if(position == Tabs.My.position) getString(R.string.my_activities_tab_title)
                 else getString(R.string.users_activities_tab_title)
         }.attach()
-    }
-}
-
-class ActionsFragmentAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
-    override fun getItemCount(): Int = 2
-
-    override fun createFragment(position: Int): Fragment {
-        return ActionsFillingFragment.newInstance(
-            if (position == Tabs.My.position)
-                Tabs.My.message
-            else
-                Tabs.Users.message
-        )
     }
 }
