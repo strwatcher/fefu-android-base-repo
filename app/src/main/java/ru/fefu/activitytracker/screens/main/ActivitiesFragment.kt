@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.databinding.FragmentActionsBinding
+import ru.fefu.activitytracker.databinding.FragmentActivitiesBinding
 
 
 
-class ActionsFragment: Fragment() {
-    private lateinit var _binding: FragmentActionsBinding
+class ActivitiesFragment: Fragment() {
+    private lateinit var _binding: FragmentActivitiesBinding
 
     companion object {
         const val TAG = "Actions"
 
-        fun newInstance(): ActionsFragment{
+        fun newInstance(): ActivitiesFragment{
             val args = Bundle()
-            val fragment = ActionsFragment()
+            val fragment = ActivitiesFragment()
             fragment.arguments = args
 
             return fragment
@@ -31,7 +31,7 @@ class ActionsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentActionsBinding.inflate(layoutInflater)
+        _binding = FragmentActivitiesBinding.inflate(layoutInflater)
         return _binding.root
     }
 

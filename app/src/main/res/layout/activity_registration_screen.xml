@@ -18,7 +18,7 @@
         android:id="@+id/registrationTitle"
 
         style="@style/ScreenTitle"
-        android:text="@string/registration_title"
+        android:text="@string/registration_screen_title"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/duplicate_password_hint"
+                    android:hint="@string/registration_screen_duplicate_password_hint"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/name_hint"
+                    android:hint="@string/registration_screen_name_hint"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="18dp"
 
-                android:hint="@string/sex_hint"
+                android:hint="@string/registration_screen_sex_hint"
                 app:endIconDrawable="@drawable/ic_arrow_head"
 
                 app:layout_constraintBottom_toTopOf="@id/continueButton"
@@ -159,7 +159,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
-                android:text="@string/important_info"
+                android:text="@string/registration_screen_important_info"
                 android:textColor="#000000"
                 android:textColorLink="#4B09F3"
                 android:textSize="16sp"
@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:contentDescription="@string/mono_title_description"
+                android:contentDescription="@string/registration_screen_mono_title_description"
                 android:src="@drawable/ic_mono_title"
                 app:layout_constraintBottom_toTopOf="@+id/appLogo"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="52dp"
-                android:contentDescription="@string/mono_logo_description"
+                android:contentDescription="@string/registration_screen_mono_logo_description"
                 android:src="@drawable/ic_mono_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

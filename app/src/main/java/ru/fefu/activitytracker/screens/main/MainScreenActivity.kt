@@ -27,8 +27,8 @@ class MainScreenActivity: AppCompatActivity() {
             listOf(
                 NavigationBarHandler.FragmentItem(
                     R.id.actionTab,
-                    ActionsFragment.TAG,
-                    ActionsFragment::newInstance
+                    ActivitiesFragment.TAG,
+                    ActivitiesFragment::newInstance
                 ),
                 NavigationBarHandler.FragmentItem(
                     R.id.profileTab,
@@ -44,8 +44,8 @@ class MainScreenActivity: AppCompatActivity() {
         savedInstanceState?.let {} ?: supportFragmentManager.beginTransaction().apply {
             add(
                 R.id.contentView,
-                ActionsFragment.newInstance(),
-                ActionsFragment.TAG
+                ActivitiesFragment.newInstance(),
+                ActivitiesFragment.TAG
             )
             commit()
         }

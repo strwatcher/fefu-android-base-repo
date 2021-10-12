@@ -8,9 +8,9 @@ class ActionsFragmentAdapter(fragment: Fragment): FragmentStateAdapter(fragment)
 
     override fun createFragment(position: Int): Fragment {
         return if (position == Tabs.My.position) {
-            MyActionsFragment.newInstance()
+            MyActivitiesFragment.newInstance()
         } else {
-            UsersActionsFragment.newInstance()
+            UsersActivitiesFragment.newInstance()
         }
     }
 }

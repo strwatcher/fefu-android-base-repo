@@ -8,7 +8,7 @@
         android:id="@+id/topBackgroundImage"
         android:src="@drawable/ic_top_background"
         android:scaleType="fitXY"
-        android:contentDescription="@string/bg_description"
+        android:contentDescription="@string/welcome_screen_bg_description"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="13dp"
-        android:text="@string/slogan"
+        android:text="@string/welcome_screen_slogan"
         android:textColor="#1F1F1F"
         android:textSize="32sp"
         android:textStyle="bold
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="@string/sub_slogan"
+        android:text="@string/welcome_screen_sub_slogan"
         android:textColor="#767676"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/registrationButton"
@@ -87,7 +87,7 @@
         style="@style/FilledButton"
 
         android:layout_marginBottom="4dp"
-        android:text="@string/registration_button_text"
+        android:text="@string/welcome_screen_registration_button_text"
         app:layout_constraintBottom_toTopOf="@id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="75dp"
 
-        android:text="@string/login_button_text"
+        android:text="@string/welcome_screen_login_button_text"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

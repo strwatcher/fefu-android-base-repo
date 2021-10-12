@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.fefu.activitytracker.databinding.FragmentMyActionsBinding
+import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
 
-class MyActionsFragment: Fragment() {
-    private lateinit var _binding: FragmentMyActionsBinding
+class UsersActivitiesFragment: Fragment() {
+    private lateinit var _binding: FragmentUsersActivitiesBinding
 
     companion object {
-        fun newInstance(): MyActionsFragment {
-            return MyActionsFragment()
+        fun newInstance(): UsersActivitiesFragment {
+            return  UsersActivitiesFragment()
         }
     }
 
@@ -21,7 +21,8 @@ class MyActionsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMyActionsBinding.inflate(layoutInflater)
+        _binding = FragmentUsersActivitiesBinding.inflate(layoutInflater)
         return _binding.root
     }
+
 }
