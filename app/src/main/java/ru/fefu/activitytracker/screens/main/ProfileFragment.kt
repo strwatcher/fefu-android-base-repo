@@ -12,6 +12,8 @@ class ProfileFragment : Fragment() {
     private lateinit var _binding: FragmentProfileBinding
 
     companion object {
+        const val TAG = "Profile"
+
         fun newInstance(): ProfileFragment {
             return ProfileFragment()
         }

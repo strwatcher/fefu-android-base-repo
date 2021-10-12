@@ -9,15 +9,14 @@ import com.google.android.material.tabs.TabLayoutMediator
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActionsBinding
 
-enum class Tabs(val position: Int) {
-    My(0),
-    Users(1),
-}
+
 
 class ActionsFragment: Fragment() {
     private lateinit var _binding: FragmentActionsBinding
 
     companion object {
+        const val TAG = "Actions"
+
         fun newInstance(): ActionsFragment{
             val args = Bundle()
             val fragment = ActionsFragment()
