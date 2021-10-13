@@ -9,7 +9,11 @@ import ru.fefu.activitytracker.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var _binding: FragmentProfileBinding
+    private var _binding: FragmentProfileBinding? = null
+
+    private val binding get() = _binding!!
+
+
 
     companion object {
         const val TAG = "Profile"
@@ -25,7 +29,12 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(layoutInflater)
-        return _binding.root
+        return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
+    }
 }

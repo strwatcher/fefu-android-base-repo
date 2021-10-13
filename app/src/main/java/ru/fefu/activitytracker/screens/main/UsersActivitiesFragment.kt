@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
 
 class UsersActivitiesFragment: Fragment() {
-    private lateinit var _binding: FragmentUsersActivitiesBinding
+    private var _binding: FragmentUsersActivitiesBinding? = null
+
+    private val binding get() = _binding!!
 
     companion object {
         fun newInstance(): UsersActivitiesFragment {
@@ -22,7 +24,13 @@ class UsersActivitiesFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentUsersActivitiesBinding.inflate(layoutInflater)
-        return _binding.root
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 
 }

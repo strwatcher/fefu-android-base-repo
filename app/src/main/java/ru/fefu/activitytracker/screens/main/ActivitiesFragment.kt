@@ -12,7 +12,9 @@ import ru.fefu.activitytracker.databinding.FragmentActivitiesBinding
 
 
 class ActivitiesFragment: Fragment() {
-    private lateinit var _binding: FragmentActivitiesBinding
+    private var _binding: FragmentActivitiesBinding? = null
+
+    private val binding get() = _binding!!
 
     companion object {
         const val TAG = "Actions"
@@ -32,16 +34,22 @@ class ActivitiesFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentActivitiesBinding.inflate(layoutInflater)
-        return _binding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val adapter = ActionsFragmentAdapter(this)
-        _binding.viewPager.adapter = adapter
-        TabLayoutMediator(_binding.tlTabs, _binding.viewPager) { tab, position ->
+        binding.viewPager.adapter = adapter
+        TabLayoutMediator(binding.tlTabs, binding.viewPager) { tab, position ->
             tab.text =
                 if(position == Tabs.My.position) getString(R.string.my_activities_tab_title)
                 else getString(R.string.users_activities_tab_title)
         }.attach()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        _binding = null
     }
 }
