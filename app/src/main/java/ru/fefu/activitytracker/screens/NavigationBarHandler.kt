@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.screens.main
+package ru.fefu.activitytracker.screens
 
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
@@ -7,16 +7,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavigationBarHandler
     (
-    navBar: BottomNavigationView,
-    fragmentManager: FragmentManager,
-    fragments: List<FragmentItem>,
-    fragmentContainerId: Int
+    private val navBar: BottomNavigationView,
+    private val fragmentManager: FragmentManager,
+    private val fragments: List<FragmentItem>,
+    private val fragmentContainerId: Int
 ) {
-    private val _navBar: BottomNavigationView = navBar
-    private val _fragmentManager: FragmentManager = fragmentManager
-    private val _fragments: List<FragmentItem> = fragments
-    private val _fragmentContainerId = fragmentContainerId
-
     data class FragmentItem (
         val id: Int,
         val tag: String,
@@ -28,16 +23,16 @@ class NavigationBarHandler
     }
 
     private fun setListeners() {
-        _navBar.setOnItemSelectedListener(::onItemSelected)
+        navBar.setOnItemSelectedListener(::onItemSelected)
     }
 
     private fun onItemSelected(menuItem: MenuItem): Boolean {
-        _fragmentManager.beginTransaction().apply {
-            for (fragmentItem in _fragments) {
-                val fragment = _fragmentManager.findFragmentByTag(fragmentItem.tag)
+        fragmentManager.beginTransaction().apply {
+            for (fragmentItem in fragments) {
+                val fragment = fragmentManager.findFragmentByTag(fragmentItem.tag)
                 if (fragmentItem.id == menuItem.itemId) {
                     fragment?.let {show(fragment)} ?: add(
-                        _fragmentContainerId,
+                        fragmentContainerId,
                         fragmentItem.newInstance(),
                         fragmentItem.tag
                     )
