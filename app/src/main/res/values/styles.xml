@@ -53,4 +53,8 @@
         <item name="android:padding">16dp</item>
         <item name="android:background">@null</item>
     </style>
+
+    <style name="CapsOffedTabs" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
 </resources>

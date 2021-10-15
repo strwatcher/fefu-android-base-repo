@@ -10,24 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Activity">
 
-        <activity
-            android:name=".TitleScreenActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+<!--        <activity-->
+<!--            android:name=".TitleScreenActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
 
         <activity
-            android:name=".LoginScreenActivity"
+            android:name=".screens.login.LoginScreenActivity"
             android:exported="true"
             />
         <activity
-            android:name=".RegistrationScreenActivity"
+            android:name=".screens.registration.RegistrationScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing"
             />
+
+        <activity
+            android:name=".screens.main.MainScreenActivity"
+            android:exported="true"
+            >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
 
     </application>
 

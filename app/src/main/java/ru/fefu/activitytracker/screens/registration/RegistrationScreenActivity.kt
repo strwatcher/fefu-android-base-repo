@@ -1,18 +1,19 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.screens.registration
 
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import ru.fefu.activitytracker.databinding.RegistrationScreenBinding
+import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.databinding.ActivityRegistrationScreenBinding
 
 class RegistrationScreenActivity: AppCompatActivity() {
-    private lateinit var binding: RegistrationScreenBinding
+    private lateinit var binding: ActivityRegistrationScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RegistrationScreenBinding.inflate(layoutInflater)
+        binding = ActivityRegistrationScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.goBackButton.setOnClickListener {
@@ -32,7 +33,7 @@ class RegistrationScreenActivity: AppCompatActivity() {
 
         val inputLayout = binding.sexInputLayout
 
-        val adapter = ArrayAdapter(baseContext ,R.layout.list_item, sexes)
+        val adapter = ArrayAdapter(baseContext , R.layout.list_item, sexes)
         (inputLayout.editText as? MaterialAutoCompleteTextView)?.setAdapter(adapter)
     }
 
