@@ -1,25 +1,21 @@
-package ru.fefu.activitytracker.screens.main
+package ru.fefu.activitytracker.views.main.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.fefu.activitytracker.databinding.FragmentProfileBinding
+import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
+import java.util.*
 
-class ProfileFragment : Fragment() {
-
-    private var _binding: FragmentProfileBinding? = null
+class UsersActivitiesFragment: Fragment() {
+    private var _binding: FragmentUsersActivitiesBinding? = null
 
     private val binding get() = _binding!!
 
-
-
     companion object {
-        const val TAG = "Profile"
-
-        fun newInstance(): ProfileFragment {
-            return ProfileFragment()
+        fun newInstance(): UsersActivitiesFragment {
+            return  UsersActivitiesFragment()
         }
     }
 
@@ -28,7 +24,7 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProfileBinding.inflate(layoutInflater)
+        _binding = FragmentUsersActivitiesBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -37,4 +33,5 @@ class ProfileFragment : Fragment() {
 
         _binding = null
     }
+
 }

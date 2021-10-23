@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Activity">
 
 <!--        <activity-->
-<!--            android:name=".TitleScreenActivity"-->
+<!--            android:name=".WelcomeScreenActivity"-->
 <!--            android:exported="true">-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN"/>-->
@@ -20,17 +20,17 @@
 <!--        </activity>-->
 
         <activity
-            android:name=".screens.login.LoginScreenActivity"
+            android:name=".views.login.LoginScreenActivity"
             android:exported="true"
             />
         <activity
-            android:name=".screens.registration.RegistrationScreenActivity"
+            android:name=".views.registration.RegistrationScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustNothing"
             />
 
         <activity
-            android:name=".screens.main.MainScreenActivity"
+            android:name=".views.main.MainScreenActivity"
             android:exported="true"
             >
             <intent-filter>

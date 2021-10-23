@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.screens.main
+package ru.fefu.activitytracker.views.main.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActivitiesBinding
-
+import ru.fefu.activitytracker.views.main.adapters.ActionsFragmentAdapter
+import ru.fefu.activitytracker.views.main.Tabs
 
 
 class ActivitiesFragment: Fragment() {
@@ -19,7 +20,7 @@ class ActivitiesFragment: Fragment() {
     companion object {
         const val TAG = "Actions"
 
-        fun newInstance(): ActivitiesFragment{
+        fun newInstance(): ActivitiesFragment {
             val args = Bundle()
             val fragment = ActivitiesFragment()
             fragment.arguments = args

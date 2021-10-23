@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.screens.registration
+package ru.fefu.activitytracker.views.registration
 
 import android.os.Bundle
 import android.text.method.LinkMovementMethod

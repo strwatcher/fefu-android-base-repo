@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.screens
+package ru.fefu.activitytracker.views
 
 import android.view.MenuItem
 import androidx.fragment.app.Fragment

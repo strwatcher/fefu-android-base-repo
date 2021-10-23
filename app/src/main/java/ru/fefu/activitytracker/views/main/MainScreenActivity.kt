@@ -1,10 +1,12 @@
-package ru.fefu.activitytracker.screens.main
+package ru.fefu.activitytracker.views.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityMainScreenBinding
-import ru.fefu.activitytracker.screens.NavigationBarHandler
+import ru.fefu.activitytracker.views.NavigationBarHandler
+import ru.fefu.activitytracker.views.main.fragments.ActivitiesFragment
+import ru.fefu.activitytracker.views.main.fragments.ProfileFragment
 
 
 class MainScreenActivity: AppCompatActivity() {
