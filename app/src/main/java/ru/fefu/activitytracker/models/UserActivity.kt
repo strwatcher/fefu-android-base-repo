@@ -4,10 +4,9 @@ import ru.fefu.activitytracker.views.main.ListItems
 
 data class UserActivity (
     val userName: String,
-    val name: String,
-    val metric: String,
-    val time: TimeOffset,
-    val date: Date,
+    override val name: String,
+    override val metric: String,
+    override val startDate: Date,
+    override val finishDate: Date,
     override val type: ListItems = ListItems.UserCard
-
-) : ListItemModel
+): IListItem, IActivity

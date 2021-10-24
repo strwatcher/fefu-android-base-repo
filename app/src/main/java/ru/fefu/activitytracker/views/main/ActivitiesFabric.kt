@@ -6,6 +6,14 @@ import ru.fefu.activitytracker.models.Date
 
 class ActivitiesFabric {
 
+    private val userNames = listOf(
+        "@Дим Димыч",
+        "@Naruto",
+        "@Kaneki-kun",
+        "@Diluk",
+        "@mikelitvin",
+    )
+
     private val metrics = listOf(
         "2 км 10 м",
         "123 м",
@@ -41,7 +49,7 @@ class ActivitiesFabric {
     )
 
 
-    private fun genRandomActivity(): MyActivity {
+    fun genRandomActivity(): MyActivity {
         val dates = date.random()
         return MyActivity(
             types.random(),
@@ -51,18 +59,30 @@ class ActivitiesFabric {
         )
     }
 
-    fun genActivities(count: Int): List<ListItemModel> {
+    fun genRandomUserActivity(): UserActivity {
+        val dates = date.random()
+        return UserActivity(
+            userNames.random(),
+            types.random(),
+            metrics.random(),
+            dates.first,
+            dates.second
+        )
+    }
+
+
+    fun genActivities(count: Int, generator: () -> IActivity): List<IListItem> {
         if (count < 1) return listOf()
 
-        val activities = mutableListOf<MyActivity>()
+        val activities = mutableListOf<IActivity>()
         for(i in 1..count) {
-            activities.add(genRandomActivity())
+            activities.add(generator())
         }
 
         activities.sortBy { it.finishDate }
 
         var curDate = Date()
-        val result = mutableListOf<ListItemModel>()
+        val result = mutableListOf<IListItem>()
         for (i in 0 until count) {
             if ((curDate != activities[i].finishDate)) {
                 curDate = activities[i].finishDate
@@ -87,8 +107,4 @@ class ActivitiesFabric {
 
         return result
     }
-}
-
-fun main() {
-    ActivitiesFabric().genActivities(10)
 }

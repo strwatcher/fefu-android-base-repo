@@ -2,6 +2,6 @@ package ru.fefu.activitytracker.models
 
 import ru.fefu.activitytracker.views.main.ListItems
 
-interface ListItemModel {
+interface IListItem {
     val type: ListItems
 }

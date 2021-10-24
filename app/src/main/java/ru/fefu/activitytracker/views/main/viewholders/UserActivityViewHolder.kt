@@ -1,4 +1,18 @@
 package ru.fefu.activitytracker.views.main.viewholders
 
-class UserActivityViewHolder {
+import android.view.View
+import android.widget.TextView
+import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.models.IListItem
+import ru.fefu.activitytracker.models.UserActivity
+
+class UserActivityViewHolder(itemView: View): ActivityViewHolder(itemView) {
+    private val tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
+
+    override fun bind(listItem: IListItem) {
+        super.bind(listItem)
+
+        listItem as UserActivity
+        tvUserName.text = listItem.userName
+    }
 }

@@ -3,14 +3,16 @@ package ru.fefu.activitytracker.views.main.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.fefu.activitytracker.models.ListItemModel
+import ru.fefu.activitytracker.models.IListItem
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.views.main.ListItems
+import ru.fefu.activitytracker.views.main.ListItems.MyCard
+import ru.fefu.activitytracker.views.main.ListItems.UserCard
 import ru.fefu.activitytracker.views.main.viewholders.DateSeparatorViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ListItemViewHolder
-import ru.fefu.activitytracker.views.main.viewholders.MyActivityViewHolder
+import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder
+import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 
-class ActivitiesViewAdapter(private val activities: List<ListItemModel>)
+class ActivitiesViewAdapter(private val activities: List<IListItem>)
     : RecyclerView.Adapter<ListItemViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
@@ -18,15 +20,22 @@ class ActivitiesViewAdapter(private val activities: List<ListItemModel>)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
-        return if (viewType == ListItems.MyCard.ordinal) {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.my_activity_card, parent, false)
-            MyActivityViewHolder(view)
-        }
-        else {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.date_separator, parent, false)
-            DateSeparatorViewHolder(view)
+        return when (viewType) {
+            MyCard.ordinal -> {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.activity_card, parent, false)
+                ActivityViewHolder(view)
+            }
+            UserCard.ordinal -> {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.activity_card, parent, false)
+                UserActivityViewHolder(view)
+            }
+            else -> {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.date_separator, parent, false)
+                DateSeparatorViewHolder(view)
+            }
         }
 
     }
