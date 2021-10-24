@@ -13,6 +13,9 @@ class DateSeparatorViewHolder(itemView: View): ListItemViewHolder(itemView) {
     @SuppressLint
     override fun bind(listItem: ListItemModel) {
         listItem as DateSeparator
-        tvDate.text = listItem.date.formattedDateSeparator
+
+        tvDate.text = listItem.formattedDate
+
+
     }
 }

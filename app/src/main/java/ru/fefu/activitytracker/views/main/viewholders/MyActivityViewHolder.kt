@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import ru.fefu.activitytracker.models.ListItemModel
 import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.models.Date
 import ru.fefu.activitytracker.models.MyActivity
 
 class MyActivityViewHolder(itemView: View): ListItemViewHolder(itemView) {
@@ -17,8 +18,14 @@ class MyActivityViewHolder(itemView: View): ListItemViewHolder(itemView) {
     override fun bind(listItem: ListItemModel) {
         listItem as MyActivity
         tvMetric.text = listItem.metric
-        tvTime.text = listItem.time.formattedTime
+        tvTime.text = listItem.finishDate.minus(listItem.startDate).formattedTime
         tvActivityType.text = listItem.name
-        tvDate.text = listItem.date.formattedDate
+
+        val nowMoreThanDayAfterFinish = Date.now().moreThanDayAfter(listItem.finishDate)
+        tvDate.text = if (nowMoreThanDayAfterFinish) {
+            listItem.finishDate.formattedDate
+        } else {
+            Date.now().minus(listItem.finishDate).formattedHoursAgo
+        }
     }
 }

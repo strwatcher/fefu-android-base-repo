@@ -7,7 +7,7 @@ data class UserActivity (
     val name: String,
     val metric: String,
     val time: TimeOffset,
-    val date: DateTime,
+    val date: Date,
     override val type: ListItems = ListItems.UserCard
 
 ) : ListItemModel
