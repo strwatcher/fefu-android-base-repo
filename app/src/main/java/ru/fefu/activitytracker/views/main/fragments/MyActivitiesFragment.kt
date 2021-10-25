@@ -6,10 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.fefu.activitytracker.App
+import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentMyActivitiesBinding
+import ru.fefu.activitytracker.models.IActivity
 import ru.fefu.activitytracker.models.IListItem
+import ru.fefu.activitytracker.models.MyActivity
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 import ru.fefu.activitytracker.views.main.ActivitiesFabric
+import ru.fefu.activitytracker.views.main.MainScreenActivity
+import ru.fefu.activitytracker.views.main.Screens
 
 class MyActivitiesFragment: Fragment() {
     private var _binding: FragmentMyActivitiesBinding? = null
@@ -41,6 +47,11 @@ class MyActivitiesFragment: Fragment() {
         with(binding.activitiesListView) {
             adapter = activitiesAdapter
             layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        activitiesAdapter.setMyItemClickListener {
+                _: Int, data: IActivity ->
+            App.INSTANCE.router.navigateTo(Screens.activityInfoScreen(data as MyActivity))
         }
     }
 

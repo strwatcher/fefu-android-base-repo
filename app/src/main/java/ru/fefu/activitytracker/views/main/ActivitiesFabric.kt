@@ -7,10 +7,10 @@ import ru.fefu.activitytracker.models.Date
 class ActivitiesFabric {
 
     private val userNames = listOf(
-        "@Дим Димыч",
-        "@Naruto",
+        "@Дим_Димыч",
+        "@NarutoUdzumaki",
         "@Kaneki-kun",
-        "@Diluk",
+        "@D_i_luk",
         "@mikelitvin",
     )
 

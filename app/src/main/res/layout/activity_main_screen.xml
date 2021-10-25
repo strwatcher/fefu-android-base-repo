@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/contentView"
+        android:id="@+id/navControllerFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,4 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/actions_screen_navigation_items"
         />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

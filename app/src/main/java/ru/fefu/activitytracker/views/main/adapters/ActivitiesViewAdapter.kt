@@ -5,6 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.models.IListItem
 import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.models.IActivity
+import ru.fefu.activitytracker.models.MyActivity
+import ru.fefu.activitytracker.models.UserActivity
 import ru.fefu.activitytracker.views.main.ListItems.MyCard
 import ru.fefu.activitytracker.views.main.ListItems.UserCard
 import ru.fefu.activitytracker.views.main.viewholders.DateSeparatorViewHolder
@@ -15,6 +18,10 @@ import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 class ActivitiesViewAdapter(private val activities: List<IListItem>)
     : RecyclerView.Adapter<ListItemViewHolder>() {
 
+    private var myItemClickListener: (Int, IActivity) -> Unit =
+        { position: Int, data: IActivity -> }
+    private var userItemClickListener: (Int, IActivity) -> Unit =
+        { position: Int, data: IActivity ->}
     override fun getItemViewType(position: Int): Int {
         return activities[position].type.ordinal
     }
@@ -24,12 +31,12 @@ class ActivitiesViewAdapter(private val activities: List<IListItem>)
             MyCard.ordinal -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.activity_card, parent, false)
-                ActivityViewHolder(view)
+                ActivityViewHolder(view, myItemClickListener)
             }
             UserCard.ordinal -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.activity_card, parent, false)
-                UserActivityViewHolder(view)
+                UserActivityViewHolder(view, userItemClickListener)
             }
             else -> {
                 val view = LayoutInflater.from(parent.context)
@@ -45,5 +52,14 @@ class ActivitiesViewAdapter(private val activities: List<IListItem>)
     override fun onBindViewHolder(holder: ListItemViewHolder, position: Int) {
         holder.bind(activities[position])
     }
+
+    fun setMyItemClickListener(listener: (Int, IActivity) -> Unit) {
+        myItemClickListener = listener
+    }
+    fun setUserItemClickListener(listener: (Int, IActivity) -> Unit) {
+        userItemClickListener = listener
+    }
+
+
 
 }
