@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.databinding.MyActivityCardInfoBinding
+import ru.fefu.activitytracker.models.Date
 import ru.fefu.activitytracker.models.MyActivity
 
 class ActivityInfoFragment(private val activityData: MyActivity): Fragment() {
@@ -27,8 +28,22 @@ class ActivityInfoFragment(private val activityData: MyActivity): Fragment() {
     ): View {
         _binding = MyActivityCardInfoBinding.inflate(layoutInflater)
         (activity as AppCompatActivity).setSupportActionBar(binding.actionBar)
+
         binding.tvMetric.text = activityData.metric
+
         binding.actionBar.title = activityData.name
+
+        val nowMoreThanDayAfterFinish = Date.now().moreThanDayAfter(activityData.finishDate)
+        binding.tvDate.text = if (nowMoreThanDayAfterFinish) {
+            activityData.finishDate.formattedDate
+        } else {
+            Date.now().minus(activityData.finishDate).formattedHoursAgo
+        }
+
+        binding.tvStartTimeValue.text = activityData.startDate.formattedTime
+        binding.tvEndTimeValue.text = activityData.finishDate.formattedTime
+
+
         return binding.root
     }
 

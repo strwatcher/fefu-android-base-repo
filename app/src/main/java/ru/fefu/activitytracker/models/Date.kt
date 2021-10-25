@@ -51,6 +51,9 @@ class Date (
     val formattedDateSeparator
         get() = "${months[MM]} $yyyy года"
 
+    val formattedTime
+        get() = "${hh.toString().padStart(2, '0')}:${mm.toString().padStart(2, '0')}"
+
     override fun compareTo(other: Date): Int {
         return -1 * ((yyyy - other.yyyy) * 365 + (MM - other.MM) * 30 + (dd - other.dd))
     }

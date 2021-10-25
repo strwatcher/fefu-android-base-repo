@@ -43,4 +43,7 @@
     <string name="title_description">название</string>
     <string name="back_button_description">назад</string>
     <string name="logo_description">логотип</string>
+    <string name="activity_card_Info_tvEndTimeHeader">Финиш</string>
+    <string name="vertical_line_separator">|</string>
+    <string name="comment_hint">Комментарий</string>
 </resources>
