@@ -4,14 +4,14 @@
     <item
         android:id="@+id/miDelete"
         android:orderInCategory="0"
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:icon="@drawable/ic_trash"
         android:title=""
         app:showAsAction="ifRoom"
         />
     <item
         android:id="@+id/miShare"
         android:orderInCategory="1"
-        android:icon="@drawable/ic_baseline_share_24"
+        android:icon="@drawable/ic_share"
         android:title=""
         app:showAsAction="always"
     />

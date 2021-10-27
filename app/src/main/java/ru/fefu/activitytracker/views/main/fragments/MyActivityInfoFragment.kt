@@ -8,7 +8,9 @@ import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.MyActivityCardInfoBinding
 import ru.fefu.activitytracker.models.IActivity
 
-open class MyActivityInfoFragment(private val activityData: IActivity): Fragment() {
+open class MyActivityInfoFragment(
+    private val activityData: IActivity,
+    ): Fragment() {
     private var _binding: MyActivityCardInfoBinding? = null
     private val binding get() = _binding!!
 
@@ -33,7 +35,6 @@ open class MyActivityInfoFragment(private val activityData: IActivity): Fragment
         binding.tvStartTimeValue.text = activityData.startTime
         binding.tvEndTimeValue.text = activityData.finishTime
 
-
         return binding.root
     }
 
@@ -41,7 +42,6 @@ open class MyActivityInfoFragment(private val activityData: IActivity): Fragment
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.my_activity_info_action_bar, menu)
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

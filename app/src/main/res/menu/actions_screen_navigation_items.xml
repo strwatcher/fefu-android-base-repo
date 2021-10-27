@@ -4,7 +4,8 @@
         android:id="@+id/activitiesFragment"
         android:orderInCategory="0"
         android:title="@string/main_screen_nav_bar_activity_item"
-        android:icon="@drawable/ic_sports" />
+        android:icon="@drawable/ic_sports"
+        />
     <item
         android:id="@+id/profileFragment"
         android:orderInCategory="1"

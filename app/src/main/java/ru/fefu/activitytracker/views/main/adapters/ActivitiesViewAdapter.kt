@@ -15,13 +15,15 @@ import ru.fefu.activitytracker.views.main.viewholders.ListItemViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 
-class ActivitiesViewAdapter(private val activities: List<IListItem>)
+class ActivitiesViewAdapter(staticActivities: List<IListItem>)
     : RecyclerView.Adapter<ListItemViewHolder>() {
 
+    private val activities = staticActivities.toMutableList()
     private var myItemClickListener: (Int, IActivity) -> Unit =
         { position: Int, data: IActivity -> }
     private var userItemClickListener: (Int, IActivity) -> Unit =
         { position: Int, data: IActivity ->}
+
     override fun getItemViewType(position: Int): Int {
         return activities[position].type.ordinal
     }
