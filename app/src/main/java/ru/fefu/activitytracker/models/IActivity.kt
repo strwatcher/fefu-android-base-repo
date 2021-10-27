@@ -3,6 +3,8 @@ package ru.fefu.activitytracker.models
 interface IActivity: IListItem {
     val name: String
     val metric: String
-    val startDate: Date
-    val finishDate: Date
+    val finishDate: String
+    val duration: String
+    val startTime: String
+    val finishTime: String
 }

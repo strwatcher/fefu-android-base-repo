@@ -21,9 +21,8 @@ class BottomNavigationViewAdapter(
     private fun onItemSelected(menuItem: MenuItem): Boolean {
             for (screenItem in screenItems) {
                 if (screenItem.id == menuItem.itemId) {
-                    App.INSTANCE.router.showOrCreate(screenItem.screen, screenItem.id)
-                } else {
-                    App.INSTANCE.router.hide(screenItem.screen, screenItem.id)
+                    App.INSTANCE.router.navigateTo(screenItem.screen)
+                    break
                 }
             }
         return true

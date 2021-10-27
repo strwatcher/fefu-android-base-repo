@@ -1,23 +1,20 @@
 package ru.fefu.activitytracker.views.main.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import ru.fefu.activitytracker.App
+import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.MyActivityCardInfoBinding
-import ru.fefu.activitytracker.models.Date
-import ru.fefu.activitytracker.models.MyActivity
+import ru.fefu.activitytracker.models.IActivity
 
-class ActivityInfoFragment(private val activityData: MyActivity): Fragment() {
+open class MyActivityInfoFragment(private val activityData: IActivity): Fragment() {
     private var _binding: MyActivityCardInfoBinding? = null
     private val binding get() = _binding!!
 
     companion object {
-        fun newInstance(activityData: MyActivity): ActivityInfoFragment {
-            return ActivityInfoFragment(activityData)
+        fun newInstance(activityData: IActivity): MyActivityInfoFragment {
+            return MyActivityInfoFragment(activityData)
         }
     }
 
@@ -28,25 +25,22 @@ class ActivityInfoFragment(private val activityData: MyActivity): Fragment() {
     ): View {
         _binding = MyActivityCardInfoBinding.inflate(layoutInflater)
         (activity as AppCompatActivity).setSupportActionBar(binding.actionBar)
-
+        setHasOptionsMenu(true)
         binding.tvMetric.text = activityData.metric
-
         binding.actionBar.title = activityData.name
+        binding.tvDate.text = activityData.finishDate
 
-        val nowMoreThanDayAfterFinish = Date.now().moreThanDayAfter(activityData.finishDate)
-        binding.tvDate.text = if (nowMoreThanDayAfterFinish) {
-            activityData.finishDate.formattedDate
-        } else {
-            Date.now().minus(activityData.finishDate).formattedHoursAgo
-        }
-
-        binding.tvStartTimeValue.text = activityData.startDate.formattedTime
-        binding.tvEndTimeValue.text = activityData.finishDate.formattedTime
+        binding.tvStartTimeValue.text = activityData.startTime
+        binding.tvEndTimeValue.text = activityData.finishTime
 
 
         return binding.root
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.my_activity_info_action_bar, menu)
+    }
 
 
     override fun onDestroyView() {

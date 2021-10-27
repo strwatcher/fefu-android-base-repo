@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
 import ru.fefu.activitytracker.models.IListItem
-import ru.fefu.activitytracker.views.main.ActivitiesFabric
+import ru.fefu.activitytracker.models.UserActivity
+import ru.fefu.activitytracker.views.main.Activities
+import ru.fefu.activitytracker.views.main.Screens
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 
 class UsersActivitiesFragment: Fragment() {
@@ -16,8 +19,8 @@ class UsersActivitiesFragment: Fragment() {
 
     private val binding get() = _binding!!
 
-    private val fabric = ActivitiesFabric()
-    private var activities: List<IListItem> = fabric.genActivities(10, fabric::genRandomUserActivity)
+
+    private var activities: List<IListItem> = Activities.getUsersActivities()
     private val activitiesAdapter = ActivitiesViewAdapter(activities)
 
     companion object {
@@ -41,6 +44,12 @@ class UsersActivitiesFragment: Fragment() {
         with (binding.activitiesListView) {
             adapter = activitiesAdapter
             layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        activitiesAdapter.setUserItemClickListener { _, iActivity ->
+            App.INSTANCE.router.navigateTo(
+                Screens.userActivityInfoScreen(iActivity as UserActivity)
+            )
         }
     }
     override fun onDestroyView() {
