@@ -46,4 +46,5 @@
     <string name="activity_card_Info_tvEndTimeHeader">Финиш</string>
     <string name="vertical_line_separator">|</string>
     <string name="comment_hint">Комментарий</string>
+    <string name="start_time_header">Старт</string>
 </resources>
