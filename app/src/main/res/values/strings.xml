@@ -47,4 +47,6 @@
     <string name="vertical_line_separator">|</string>
     <string name="comment_hint">Комментарий</string>
     <string name="start_time_header">Старт</string>
+    <string name="tv_my_activities_subheader">Нажимай на кнопку ниже и начинаем\nтрекать активность</string>
+    <string name="tv_my_activities_header">Время потренить</string>
 </resources>

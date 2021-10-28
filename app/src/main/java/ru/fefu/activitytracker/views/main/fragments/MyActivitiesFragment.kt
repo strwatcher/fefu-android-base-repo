@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.App
@@ -42,9 +43,15 @@ class MyActivitiesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding.activitiesListView) {
-            adapter = activitiesAdapter
-            layoutManager = LinearLayoutManager(requireContext())
+        if (activities.isNotEmpty()) {
+            with(binding.activitiesListView) {
+                adapter = activitiesAdapter
+                layoutManager = LinearLayoutManager(requireContext())
+            }
+        }
+        else {
+            binding.tvHeader.visibility = TextView.VISIBLE
+            binding.tvSubHeader.visibility = TextView.VISIBLE
         }
 
         activitiesAdapter.setMyItemClickListener {
