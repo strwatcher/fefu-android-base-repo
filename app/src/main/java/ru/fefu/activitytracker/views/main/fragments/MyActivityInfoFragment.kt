@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.github.terrakok.cicerone.Screen
+import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.MyActivityCardInfoBinding
 import ru.fefu.activitytracker.models.IActivity
@@ -34,6 +36,10 @@ open class MyActivityInfoFragment(
 
         binding.tvStartTimeValue.text = activityData.startTime
         binding.tvFinishTimeValue.text = activityData.finishTime
+
+        binding.tbAction.setNavigationOnClickListener {
+            App.INSTANCE.router.Back()
+        }
 
         return binding.root
     }

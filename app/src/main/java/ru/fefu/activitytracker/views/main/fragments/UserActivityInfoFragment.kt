@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.databinding.UserActivityCardInfoBinding
 import ru.fefu.activitytracker.models.IActivity
 import ru.fefu.activitytracker.models.UserActivity
@@ -38,7 +39,9 @@ class UserActivityInfoFragment(private val activityData: IActivity): Fragment() 
         binding.tvUserName.text = activityData.userName
         binding.tvComment.text = activityData.userComment
 
-
+        binding.tbAction.setNavigationOnClickListener {
+            App.INSTANCE.router.Back()
+        }
 
         return binding.root
     }
