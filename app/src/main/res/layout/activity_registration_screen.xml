@@ -8,7 +8,7 @@
     <ImageButton
         android:id="@+id/goBackButton"
         style="@style/BackArrowButton"
-        android:contentDescription="@string/back_button_description"
+        android:contentDescription="@string/desc_back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,8 +17,8 @@
     <TextView
         android:id="@+id/registrationTitle"
 
-        style="@style/ScreenTitle"
-        android:text="@string/registration_screen_title"
+        style="@style/tvScreenTitle"
+        android:text="@string/tv_registration_screen_title"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/registration_screen_duplicate_password_hint"
+                    android:hint="@string/duplicate_password_hint"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="@string/registration_screen_name_hint"
+                    android:hint="@string/name_hint"
                     tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="18dp"
 
-                android:hint="@string/registration_screen_sex_hint"
+                android:hint="@string/sex_hint"
                 app:endIconDrawable="@drawable/ic_arrow_head"
 
                 app:layout_constraintBottom_toTopOf="@id/continueButton"
@@ -143,13 +143,13 @@
                 style="@style/FilledButton"
 
                 android:layout_marginTop="40dp"
-                android:text="@string/continue_button_text"
+                android:text="@string/button_continue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sexInputLayout" />
 
             <TextView
-                android:id="@+id/importantInfo"
+                android:id="@+id/tvImportantInfo"
 
                 style="@style/Text"
 
@@ -159,28 +159,28 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
-                android:text="@string/registration_screen_important_info"
+                android:text="@string/tv_registration_screen_important_info"
                 android:textColor="#000000"
                 android:textColorLink="#4B09F3"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@id/appTitle"
+                app:layout_constraintBottom_toTopOf="@id/tvAppTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/continueButton"
                 tools:ignore="LinkPurposeUnclearCheck" />
 
             <ImageView
-                android:id="@+id/appTitle"
+                android:id="@+id/tvAppTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:contentDescription="@string/registration_screen_mono_title_description"
+                android:contentDescription="@string/desc_registration_screen_mono_title"
                 android:src="@drawable/ic_mono_title"
                 app:layout_constraintBottom_toTopOf="@+id/appLogo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/importantInfo" />
+                app:layout_constraintTop_toBottomOf="@+id/tvImportantInfo" />
 
             <ImageView
                 android:id="@+id/appLogo"
@@ -188,13 +188,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="52dp"
-                android:contentDescription="@string/registration_screen_mono_logo_description"
+                android:contentDescription="@string/desc_registration_screen_mono_logo"
                 android:src="@drawable/ic_mono_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/appTitle" />
+                app:layout_constraintTop_toBottomOf="@id/tvAppTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

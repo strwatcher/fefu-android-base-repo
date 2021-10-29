@@ -11,14 +11,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/metric"
+        android:id="@+id/tvMetric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/time"
+        app:layout_constraintBottom_toTopOf="@id/tvTime"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,23 +26,23 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
 
         android:textColor="#101010"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/activityName"
+        app:layout_constraintBottom_toTopOf="@id/tvActivityName"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metric"
+        app:layout_constraintTop_toBottomOf="@+id/tvMetric"
         app:layout_constraintVertical_chainStyle="packed"
         tools:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/activityName"
+        android:id="@+id/tvActivityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/time" />
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
     <TextView
         android:id="@+id/tvUserName"
@@ -67,7 +67,7 @@
         />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/actionBar"
+        android:id="@+id/tbAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textColor="#4B09F3"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/actionBar"
+        app:layout_constraintTop_toBottomOf="@id/tbAction"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
@@ -73,7 +73,7 @@
         android:id="@+id/tvStartTimeHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start_time_header"
+        android:text="@string/tv_activity_card_start_time_header"
         android:textColor="#101010"
 
         android:layout_marginTop="4dp"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="4dp"
-        android:text="@string/vertical_line_separator"
+        android:text="@string/tv_vertical_line_separator"
         android:textColor="#808080"
 
 
@@ -121,20 +121,20 @@
         android:id="@+id/tvEndTimeHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_card_Info_tvEndTimeHeader"
+        android:text="@string/tv_activity_card_finish_time_header"
         android:textColor="#101010"
 
         android:layout_marginTop="4dp"
         android:layout_marginStart="32dp"
         app:layout_constraintTop_toBottomOf="@id/tvTime"
         app:layout_constraintStart_toEndOf="@id/tvStartTimeValue"
-        app:layout_constraintEnd_toStartOf="@id/tvEndTimeValue"
+        app:layout_constraintEnd_toStartOf="@id/tvFinishTimeValue"
         app:layout_constraintHorizontal_chainStyle="packed"
         />
 
 
     <TextView
-        android:id="@+id/tvEndTimeValue"
+        android:id="@+id/tvFinishTimeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

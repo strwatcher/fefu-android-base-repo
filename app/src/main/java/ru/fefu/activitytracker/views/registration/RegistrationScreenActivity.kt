@@ -38,6 +38,6 @@ class RegistrationScreenActivity: AppCompatActivity() {
     }
 
     private fun enableLinks() {
-        binding.importantInfo.movementMethod = LinkMovementMethod.getInstance()
+        binding.tvImportantInfo.movementMethod = LinkMovementMethod.getInstance()
     }
 }

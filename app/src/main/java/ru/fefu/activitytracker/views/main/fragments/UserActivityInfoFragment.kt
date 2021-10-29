@@ -26,15 +26,15 @@ class UserActivityInfoFragment(private val activityData: IActivity): Fragment() 
         savedInstanceState: Bundle?
     ): View {
         _binding = UserActivityCardInfoBinding.inflate(layoutInflater)
-        (activity as AppCompatActivity).setSupportActionBar(binding.actionBar)
+        (activity as AppCompatActivity).setSupportActionBar(binding.tbAction)
         activityData as UserActivity
 
         binding.tvMetric.text = activityData.metric
-        binding.actionBar.title = activityData.name
+        binding.tbAction.title = activityData.name
         binding.tvDate.text = activityData.finishDate
 
         binding.tvStartTimeValue.text = activityData.startTime
-        binding.tvEndTimeValue.text = activityData.finishTime
+        binding.tvFinishTimeValue.text = activityData.finishTime
         binding.tvUserName.text = activityData.userName
         binding.tvComment.text = activityData.userComment
 

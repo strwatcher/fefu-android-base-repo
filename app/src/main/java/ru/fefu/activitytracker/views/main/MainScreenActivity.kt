@@ -14,7 +14,7 @@ open class MainScreenActivity: AppCompatActivity() {
 
     private lateinit var bottomNavigationViewAdapter: BottomNavigationViewAdapter
 
-    private val navigator by lazy { ExtendedAppNavigator(this, R.id.navControllerFragment) }
+    private val navigator by lazy { ExtendedAppNavigator(this, R.id.fvActivities) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ open class MainScreenActivity: AppCompatActivity() {
 
 
         bottomNavigationViewAdapter = BottomNavigationViewAdapter(
-            binding.bottomNavBar,
+            binding.nvActivitiesAndProfile,
             screens
         )
 

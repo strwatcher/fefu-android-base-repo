@@ -41,7 +41,7 @@ class UsersActivitiesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with (binding.activitiesListView) {
+        with (binding.lvActivities) {
             adapter = activitiesAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }

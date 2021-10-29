@@ -26,14 +26,14 @@ open class MyActivityInfoFragment(
         savedInstanceState: Bundle?
     ): View {
         _binding = MyActivityCardInfoBinding.inflate(layoutInflater)
-        (activity as AppCompatActivity).setSupportActionBar(binding.actionBar)
+        (activity as AppCompatActivity).setSupportActionBar(binding.tbAction)
         setHasOptionsMenu(true)
         binding.tvMetric.text = activityData.metric
-        binding.actionBar.title = activityData.name
+        binding.tbAction.title = activityData.name
         binding.tvDate.text = activityData.finishDate
 
         binding.tvStartTimeValue.text = activityData.startTime
-        binding.tvEndTimeValue.text = activityData.finishTime
+        binding.tvFinishTimeValue.text = activityData.finishTime
 
         return binding.root
     }

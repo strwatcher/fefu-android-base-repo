@@ -41,10 +41,10 @@ class ActivitiesFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val adapter = ActionsFragmentAdapter(this)
         binding.viewPager.adapter = adapter
-        TabLayoutMediator(binding.tlTabs, binding.viewPager) { tab, position ->
+        TabLayoutMediator(binding.tlActivitiesTabs, binding.viewPager) { tab, position ->
             tab.text =
-                if(position == Tabs.My.position) getString(R.string.my_activities_tab_title)
-                else getString(R.string.users_activities_tab_title)
+                if(position == Tabs.My.position) getString(R.string.tab_title_my_activities)
+                else getString(R.string.tab_title_users_activities)
         }.attach()
     }
 

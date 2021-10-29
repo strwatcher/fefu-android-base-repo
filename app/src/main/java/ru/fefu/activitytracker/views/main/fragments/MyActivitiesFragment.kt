@@ -44,7 +44,7 @@ class MyActivitiesFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activities.isNotEmpty()) {
-            with(binding.activitiesListView) {
+            with(binding.lvActivities) {
                 adapter = activitiesAdapter
                 layoutManager = LinearLayoutManager(requireContext())
             }
