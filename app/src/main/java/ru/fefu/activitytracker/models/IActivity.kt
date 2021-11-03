@@ -7,4 +7,5 @@ interface IActivity: IListItem {
     val duration: String
     val startTime: String
     val finishTime: String
+    override val type: ListItems
 }

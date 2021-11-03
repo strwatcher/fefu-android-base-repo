@@ -1,8 +1,10 @@
 package ru.fefu.activitytracker.models
 
-import ru.fefu.activitytracker.views.main.ListItems
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DateSeparator(
     val formattedDate: String,
-    override val type: ListItems = ListItems.DateSeparator,
-) : IListItem
+    override val type: ListItems = ListItems.DateSeparator
+) : IListItem, Parcelable

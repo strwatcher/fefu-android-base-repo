@@ -1,7 +1,10 @@
 package ru.fefu.activitytracker.models
 
-import ru.fefu.activitytracker.views.main.ListItems
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
 
+@Parcelize
 data class UserActivity (
     val userName: String,
     val userComment: String,
@@ -11,5 +14,5 @@ data class UserActivity (
     override val duration: String,
     override val startTime: String,
     override val finishTime: String,
-    override val type: ListItems = ListItems.UserCard,
-): IListItem, IActivity
+    override val type: ListItems = ListItems.UserCard
+): IActivity, Parcelable

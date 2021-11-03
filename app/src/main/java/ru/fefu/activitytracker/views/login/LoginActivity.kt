@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.fefu.activitytracker.databinding.ActivityLoginScreenBinding
 
-class LoginScreenActivity: AppCompatActivity() {
+class LoginActivity: AppCompatActivity() {
     private lateinit var _binding: ActivityLoginScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

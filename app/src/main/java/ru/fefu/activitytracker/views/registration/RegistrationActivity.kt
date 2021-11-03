@@ -8,7 +8,7 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityRegistrationScreenBinding
 
-class RegistrationScreenActivity: AppCompatActivity() {
+class RegistrationActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRegistrationScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

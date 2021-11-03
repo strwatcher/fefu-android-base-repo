@@ -3,13 +3,8 @@ package ru.fefu.activitytracker.views.main.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.fefu.activitytracker.models.IListItem
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.models.IActivity
-import ru.fefu.activitytracker.models.MyActivity
-import ru.fefu.activitytracker.models.UserActivity
-import ru.fefu.activitytracker.views.main.ListItems.MyCard
-import ru.fefu.activitytracker.views.main.ListItems.UserCard
+import ru.fefu.activitytracker.models.*
 import ru.fefu.activitytracker.views.main.viewholders.DateSeparatorViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ListItemViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder
@@ -30,12 +25,12 @@ class ActivitiesViewAdapter(staticActivities: List<IListItem>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
         return when (viewType) {
-            MyCard.ordinal -> {
+            ListItems.MyCard.ordinal -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.activity_card, parent, false)
                 ActivityViewHolder(view, myItemClickListener)
             }
-            UserCard.ordinal -> {
+            ListItems.UserCard.ordinal -> {
                 val view = LayoutInflater.from(parent.context)
                     .inflate(R.layout.activity_card, parent, false)
                 UserActivityViewHolder(view, userItemClickListener)

@@ -3,7 +3,7 @@ package ru.fefu.activitytracker.views.main
 import ru.fefu.activitytracker.models.*
 
 
-class Activities {
+class ActivitiesStorage {
     companion object {
         @JvmStatic
         fun getMyActivities(): List<IListItem> =

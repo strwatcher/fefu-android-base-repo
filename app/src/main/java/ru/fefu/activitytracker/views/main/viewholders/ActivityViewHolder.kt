@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.models.IListItem
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.models.IActivity
+import ru.fefu.activitytracker.models.MyActivity
 
 open class ActivityViewHolder(itemView: View, listener: (Int, IActivity) -> Unit)
     : ListItemViewHolder(itemView) {
@@ -15,6 +16,7 @@ open class ActivityViewHolder(itemView: View, listener: (Int, IActivity) -> Unit
     private val tvActivityType: TextView = itemView.findViewById(R.id.tvActivityName)
     private val tvDate: TextView = itemView.findViewById(R.id.tvDate)
     protected lateinit var data: IActivity
+
     init {
         itemView.setOnClickListener {
             if (absoluteAdapterPosition != RecyclerView.NO_POSITION)

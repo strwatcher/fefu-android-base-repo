@@ -12,14 +12,6 @@ class UserActivityViewHolder(itemView: View, listener: (Int, IActivity) -> Unit)
     : ActivityViewHolder(itemView, listener) {
     private val tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
 
-    init {
-        itemView.setOnClickListener {
-            if (absoluteAdapterPosition != RecyclerView.NO_POSITION) {
-                listener.invoke(absoluteAdapterPosition, data)
-            }
-        }
-    }
-
     override fun bind(listItem: IListItem) {
         super.bind(listItem)
         listItem as UserActivity
