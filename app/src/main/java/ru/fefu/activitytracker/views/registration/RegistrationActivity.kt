@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.screens.registration
+package ru.fefu.activitytracker.views.registration
 
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
@@ -8,7 +8,7 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityRegistrationScreenBinding
 
-class RegistrationScreenActivity: AppCompatActivity() {
+class RegistrationActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRegistrationScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +38,6 @@ class RegistrationScreenActivity: AppCompatActivity() {
     }
 
     private fun enableLinks() {
-        binding.importantInfo.movementMethod = LinkMovementMethod.getInstance()
+        binding.tvImportantInfo.movementMethod = LinkMovementMethod.getInstance()
     }
 }

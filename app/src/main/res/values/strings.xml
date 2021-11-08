@@ -1,46 +1,55 @@
 <resources>
     <string name="app_name">Activity Tracker</string>
-    <string name="welcome_screen_slogan">Пожалуй лучший\nфитнес трекер в ДВФУ</string>
-    <string name="welcome_screen_sub_slogan">Созданный студентами\n2-ого курса</string>
-    <string name="welcome_screen_registration_button_text">Зарегистрироваться</string>
-    <string name="welcome_screen_login_button_text">Уже есть аккаунт?</string>
-    <string name="welcome_screen_bg_description">волны</string>
+    <string name="tv_welcome_screen_slogan">Пожалуй лучший\nфитнес трекер в ДВФУ</string>
+    <string name="tv_welcome_screen_sub_slogan">Созданный студентами\n2-ого курса</string>
+    <string name="button_welcome_screen_registration">Зарегистрироваться</string>
+    <string name="button_welcome_screen_login">Уже есть аккаунт?</string>
+    <string name="desc_welcome_screen_bg">волны</string>
 
-    <string name="login_screen_title">Вход</string>
-    <string name="login_screen_riders_image_description">велосипедисты</string>
+    <string name="tv_login_screen_title">Вход</string>
+    <string name="desc_login_screen_riders_image">велосипедисты</string>
 
-    <string name="login_hint">Логин</string>
-    <string name="password_hint">Пароль</string>
-    <string name="continue_button_text">Продолжить</string>
-
-    <string name="registration_screen_title">регистрация</string>
-    <string name="registration_screen_duplicate_password_hint">Повторите пароль</string>
-    <string name="registration_screen_name_hint">Имя или никнейм</string>
-    <string name="registration_screen_sex_hint">Пол</string>
-    <string name="registration_screen_important_info">Нажимая на кнопку, вы соглашаетесь с
+    <string name="tv_registration_screen_title">регистрация</string>
+    <string name="tv_registration_screen_important_info">Нажимая на кнопку, вы соглашаетесь с
         <a href="https://www.placecage.com/256/256">политикой конфиденциальности</a>
         и обработки персональных
         данных, а также принимаете
         <a href="https://www.placecage.com/256/256">пользовательское соглашение</a>
     </string>
-    <string name="registration_screen_mono_logo_description">одноцветный логотип</string>
-    <string name="registration_screen_mono_title_description">одноцветное название</string>
+    <string name="desc_registration_screen_mono_logo">одноцветный логотип</string>
+    <string name="desc_registration_screen_mono_title">одноцветное название</string>
+
+    <string name="item_nav_bar_activity">Активность</string>
+    <string name="item_nav_bar_profile">Профиль</string>
+    <string name="tv_main_screen_users_activities">Активности пользователей</string>
+
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+
+    <string name="duplicate_password_hint">Повторите пароль</string>
+    <string name="name_hint">Имя или никнейм</string>
+    <string name="sex_hint">Пол</string>
+    <string name="comment_hint">Комментарий</string>
 
     <string name="sex_man">Мужской</string>
     <string name="sex_woman">Женский</string>
     <string name="sex_other">Другое</string>
 
-    <string name="main_screen_nav_bar_activity_item">Активность</string>
-    <string name="main_screen_nav_bar_profile_item">Профиль</string>
-    <string name="main_screen_users_activities_text">Активности пользователей</string>
+    <string name="button_continue">Продолжить</string>
 
-    <string name="users_activities_tab_title">Пользователей</string>
-    <string name="my_activities_tab_title">Мои</string>
-    <string name="my_activities_screen_text">Мои активности</string>
+
+    <string name="tab_title_users_activities">Пользователей</string>
+    <string name="tab_title_my_activities">Мои</string>
 
     <string name="profile_screen_text">Профиль</string>
 
-    <string name="title_description">название</string>
-    <string name="back_button_description">назад</string>
-    <string name="logo_description">логотип</string>
+    <string name="desc_title">название</string>
+    <string name="desc_back_button">назад</string>
+    <string name="desc_logo">логотип</string>
+    <string name="tv_vertical_line_separator">|</string>
+
+    <string name="tv_activity_card_finish_time_header">Финиш</string>
+    <string name="tv_activity_card_start_time_header">Старт</string>
+    <string name="tv_my_activities_sub_header">Нажимай на кнопку ниже и начинаем\nтрекать активность</string>
+    <string name="tv_my_activities_header">Время потренить</string>
 </resources>

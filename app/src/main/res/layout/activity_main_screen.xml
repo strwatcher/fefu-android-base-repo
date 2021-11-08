@@ -5,19 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/contentView"
+        android:id="@+id/fvActivities"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/nvActivitiesAndProfile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
-        />
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavBar"
+        android:id="@+id/nvActivitiesAndProfile"
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/actions_screen_navigation_items"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

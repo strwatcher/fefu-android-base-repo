@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activities_navigation_graph"
+    app:startDestination="@id/activitiesFragment">
+
+    <fragment
+        android:id="@+id/activitiesFragment"
+        android:name="ru.fefu.activitytracker.views.main.fragments.Activities"
+        android:label="ActivitiesFragment">
+        <action
+            android:id="@+id/action_activitiesFragment_to_myActivityInfo"
+            app:destination="@id/myActivityInfo"
+            app:launchSingleTop="false">
+            <argument
+                android:name="Activity"
+                app:argType="ru.fefu.activitytracker.models.MyActivity"
+                />
+        </action>
+        <action
+            android:id="@+id/action_activitiesFragment_to_userActivityInfo"
+            app:destination="@id/userActivityInfo" >
+            <argument
+                android:name="Activity"
+                app:argType="ru.fefu.activitytracker.models.UserActivity"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/myActivityInfo"
+        android:name="ru.fefu.activitytracker.views.main.fragments.MyActivityInfo"
+        android:label="MyActivityInfo">
+
+    </fragment>
+    <fragment
+        android:id="@+id/userActivityInfo"
+        android:name="ru.fefu.activitytracker.views.main.fragments.UserActivityInfo"
+        android:label="UserActivityInfo" />
+</navigation>

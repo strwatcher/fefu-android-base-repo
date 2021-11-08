@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_activities_screen_text"
-        android:textAllCaps="false"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textColor="#101010"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/lvActivities"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       tools:layout_editor_absoluteX="16dp"
+       tools:layout_editor_absoluteY="0dp" />
 
+   <TextView
+       android:visibility="invisible"
+       android:id="@+id/tvHeader"
+       android:layout_width="match_parent"
+       android:text="@string/tv_my_activities_header"
+       android:textSize="24sp"
+       android:textStyle="bold"
+       android:textColor="#101010"
+       android:textAlignment="center"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="8dp"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toTopOf="@+id/tvSubHeader"
+       app:layout_constraintVertical_chainStyle="packed" />
+
+   <TextView
+       android:visibility="invisible"
+       android:id="@+id/tvSubHeader"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:enabled="false"
+       android:text="@string/tv_my_activities_sub_header"
+       android:textAlignment="center"
+       android:textColor="#808080"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/tvHeader"
+       app:layout_constraintVertical_chainStyle="packed"
+       tools:layout_editor_absoluteX="94dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

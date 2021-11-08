@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/actionTab"
-        android:title="@string/main_screen_nav_bar_activity_item"
-        android:icon="@drawable/ic_sports" />
-    <item android:id="@+id/profileTab"
-        android:title="@string/main_screen_nav_bar_profile_item"
+    <item
+        android:id="@+id/activitiesContainerFragment"
+        android:title="@string/item_nav_bar_activity"
+        android:icon="@drawable/ic_sports"
+        />
+    <item
+        android:id="@+id/profileFragment"
+        android:title="@string/item_nav_bar_profile"
         android:icon="@drawable/ic_profile_icon"/>
 </menu>
