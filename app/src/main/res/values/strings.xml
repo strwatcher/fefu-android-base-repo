@@ -52,4 +52,10 @@
     <string name="tv_activity_card_start_time_header">Старт</string>
     <string name="tv_my_activities_sub_header">Нажимай на кнопку ниже и начинаем\nтрекать активность</string>
     <string name="tv_my_activities_header">Время потренить</string>
+    <string name="button_save">Сохранить</string>
+    <string name="profile_login">Туть логин</string>
+    <string name="profile_name_hint">Имя или никнейм</string>
+    <string name="profile_name">Туть имя</string>
+    <string name="button_change_password">Измнеить пароль</string>
+    <string name="button_exit">Выйти</string>
 </resources>

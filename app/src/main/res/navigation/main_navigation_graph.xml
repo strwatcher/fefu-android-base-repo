@@ -13,7 +13,7 @@
         android:id="@+id/profileFragment"
         android:name="ru.fefu.activitytracker.views.main.fragments.Profile"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"
+        tools:layout="@layout/fragment_profile_container"
         >
     </fragment>
 </navigation>
