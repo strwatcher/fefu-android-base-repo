@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.views.main.fragments
+package ru.fefu.activitytracker.views.main.fragments.activities
 
 import android.os.Bundle
 import android.view.View
@@ -29,10 +29,10 @@ class MyActivities:
         _adapter.setMyItemClickListener {
             _, activityData ->
             run {
-                val action =
+                val path =
                     ActivitiesDirections.
                     actionActivitiesFragmentToMyActivityInfo(activityData as MyActivity)
-                findNavController().navigate(action)
+                findNavController().navigate(path)
             }
         }
     }

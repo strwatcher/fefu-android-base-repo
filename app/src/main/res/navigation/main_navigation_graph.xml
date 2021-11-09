@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/activitiesContainerFragment"
-        android:name="ru.fefu.activitytracker.views.main.fragments.ActivitiesContainer"
+        android:name="ru.fefu.activitytracker.views.main.fragments.activities.ActivitiesContainer"
         android:label="ActivitiesContainerFragment" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="ru.fefu.activitytracker.views.main.fragments.Profile"
+        android:name="ru.fefu.activitytracker.views.main.fragments.profile.ProfileContainer"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile_container"
         >

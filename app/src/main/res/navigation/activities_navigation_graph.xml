@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/activitiesFragment"
-        android:name="ru.fefu.activitytracker.views.main.fragments.Activities"
+        android:name="ru.fefu.activitytracker.views.main.fragments.activities.Activities"
         android:label="ActivitiesFragment">
         <action
             android:id="@+id/action_activitiesFragment_to_myActivityInfo"
@@ -27,12 +27,12 @@
     </fragment>
     <fragment
         android:id="@+id/myActivityInfo"
-        android:name="ru.fefu.activitytracker.views.main.fragments.MyActivityInfo"
+        android:name="ru.fefu.activitytracker.views.main.fragments.activities.MyActivityInfo"
         android:label="MyActivityInfo">
 
     </fragment>
     <fragment
         android:id="@+id/userActivityInfo"
-        android:name="ru.fefu.activitytracker.views.main.fragments.UserActivityInfo"
+        android:name="ru.fefu.activitytracker.views.main.fragments.activities.UserActivityInfo"
         android:label="UserActivityInfo" />
 </navigation>

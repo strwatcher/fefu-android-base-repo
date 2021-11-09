@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.views.main.fragments
+package ru.fefu.activitytracker.views.main.fragments.activities
 
 import android.os.Bundle
 import android.view.View
@@ -11,7 +11,5 @@ class ActivitiesContainer:
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 }

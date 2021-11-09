@@ -58,4 +58,7 @@
     <string name="profile_name">Туть имя</string>
     <string name="button_change_password">Измнеить пароль</string>
     <string name="button_exit">Выйти</string>
+    <string name="old_password_hint">Старый пароль</string>
+    <string name="new_password_hint">Новый пароль</string>
+    <string name="button_apply">Принять</string>
 </resources>

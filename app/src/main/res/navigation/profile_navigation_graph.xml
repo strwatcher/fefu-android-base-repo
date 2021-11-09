@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/profile_navigation_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_navigation_graph"
+    app:startDestination="@id/profile">
 
+    <fragment
+        android:id="@+id/profile"
+        android:name="ru.fefu.activitytracker.views.main.fragments.profile.Profile"
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_profile_to_passwordChanger"
+            app:destination="@id/passwordChanger" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordChanger"
+        android:name="ru.fefu.activitytracker.views.main.fragments.profile.PasswordChanger"
+        android:label="PasswordChanger" />
 </navigation>

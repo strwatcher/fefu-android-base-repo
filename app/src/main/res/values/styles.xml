@@ -58,7 +58,7 @@
         <item name="textAllCaps">false</item>
     </style>
 
-    <style name="CapsOffedToolbarItems" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+    <style name="CapsOffedToolbarItems" parent="Theme.AppCompat.Light">
         <item name="textAllCaps">false</item>
         <item name="android:actionMenuTextColor">#4B09F3</item>
     </style>
