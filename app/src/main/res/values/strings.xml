@@ -9,7 +9,7 @@
     <string name="tv_login_screen_title">Вход</string>
     <string name="desc_login_screen_riders_image">велосипедисты</string>
 
-    <string name="tv_registration_screen_title">регистрация</string>
+    <string name="tv_registration_screen_title">Регистрация</string>
     <string name="tv_registration_screen_important_info">Нажимая на кнопку, вы соглашаетесь с
         <a href="https://www.placecage.com/256/256">политикой конфиденциальности</a>
         и обработки персональных

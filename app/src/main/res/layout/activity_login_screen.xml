@@ -5,28 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        style="@style/BackArrowButton"
-        android:id="@+id/goBackButton"
-        android:contentDescription="@string/desc_back_button"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbTopbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        />
-
-    <TextView
-        android:id="@+id/loginTitle"
-
-        style="@style/tvScreenTitle"
-        android:text="@string/tv_login_screen_title"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goBackButton"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrowback"
+        app:title="@string/tv_login_screen_title"
+        style="@style/Theme.AppCompat.Light"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginInputLayout"
@@ -36,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@+id/passwordInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginTitle">
+        app:layout_constraintTop_toBottomOf="@+id/tbTopbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -66,10 +57,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continueButton"
-
-        style="@style/FilledButton"
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="#4B09F3"
+        android:textAllCaps="false"
         android:text="@string/button_continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

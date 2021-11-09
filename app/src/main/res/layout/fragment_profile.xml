@@ -55,7 +55,7 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/bChangePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         android:textStyle="bold"
         />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/bExit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
