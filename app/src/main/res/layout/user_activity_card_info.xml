@@ -18,7 +18,7 @@
         android:id="@+id/tvUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#4B09F3"
+        android:textColor="@color/primary"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tbAction"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginStart="32dp"
-        android:textColor="#101010"
+        android:textColor="@color/dark"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#808080"
+        android:textColor="@color/grey"
         android:textSize="16sp"
         android:layout_marginStart="32dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:textColor="#101010"
+        android:textColor="@color/dark"
         android:textStyle="bold"
         android:textSize="24sp"
 
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tv_activity_card_start_time_header"
-        android:textColor="#101010"
+        android:textColor="@color/dark"
 
         android:layout_marginTop="4dp"
         android:layout_marginStart="32dp"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:textColor="#808080"
+        android:textColor="@color/grey"
 
         android:layout_marginTop="4dp"
         android:layout_marginStart="8dp"
@@ -107,7 +107,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="4dp"
         android:text="@string/tv_vertical_line_separator"
-        android:textColor="#808080"
+        android:textColor="@color/grey"
 
 
         app:layout_constraintStart_toEndOf="@id/tvStartTimeValue"
@@ -122,7 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tv_activity_card_finish_time_header"
-        android:textColor="#101010"
+        android:textColor="@color/dark"
 
         android:layout_marginTop="4dp"
         android:layout_marginStart="32dp"

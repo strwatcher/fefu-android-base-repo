@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="#4B09F3"
+        android:backgroundTint="@color/primary"
         android:text="@string/button_welcome_screen_registration"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@id/loginButton"

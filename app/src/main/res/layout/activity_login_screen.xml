@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#4B09F3"
+        android:backgroundTint="@color/primary"
         android:textAllCaps="false"
         android:text="@string/button_continue"
         app:layout_constraintEnd_toEndOf="parent"

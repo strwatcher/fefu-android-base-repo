@@ -10,7 +10,7 @@
         android:id="@+id/tvDateSeparator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#808080"
+        android:textColor="@color/grey"
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
         />
