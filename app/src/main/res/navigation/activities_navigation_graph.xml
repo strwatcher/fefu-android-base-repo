@@ -24,6 +24,9 @@
                 android:name="Activity"
                 app:argType="ru.fefu.activitytracker.models.UserActivity"/>
         </action>
+        <action
+            android:id="@+id/action_activitiesFragment_to_activityActivity"
+            app:destination="@id/activityActivity" />
     </fragment>
     <fragment
         android:id="@+id/myActivityInfo"
@@ -35,4 +38,8 @@
         android:id="@+id/userActivityInfo"
         android:name="ru.fefu.activitytracker.views.main.fragments.activities.UserActivityInfo"
         android:label="UserActivityInfo" />
+    <activity
+        android:id="@+id/activityActivity"
+        android:name="ru.fefu.activitytracker.views.activity.ActivityActivity"
+        android:label="ActivityActivity" />
 </navigation>

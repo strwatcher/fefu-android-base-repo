@@ -12,7 +12,7 @@ class LoginActivity: AppCompatActivity() {
         _binding = ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(_binding.root)
 
-        _binding.goBackButton.setOnClickListener {
+        _binding.tbTopbar.setNavigationOnClickListener {
             finish()
         }
     }

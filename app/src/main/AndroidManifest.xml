@@ -41,6 +41,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".views.activity.ActivityActivity"
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>

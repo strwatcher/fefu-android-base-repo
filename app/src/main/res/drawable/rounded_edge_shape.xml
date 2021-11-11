@@ -4,7 +4,7 @@
     android:shape="rectangle"   >
 
     <solid
-        android:color="@color/cardview_light_background" >
+        android:color="@color/light" >
     </solid>
 
     <stroke

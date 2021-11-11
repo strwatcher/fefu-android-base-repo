@@ -61,4 +61,6 @@
     <string name="old_password_hint">Старый пароль</string>
     <string name="new_password_hint">Новый пароль</string>
     <string name="button_apply">Принять</string>
+    <string name="button_start">Начать</string>
+    <string name="tv_ready">Погнали? :)</string>
 </resources>

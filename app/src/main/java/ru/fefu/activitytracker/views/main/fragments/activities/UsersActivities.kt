@@ -29,9 +29,9 @@ class UsersActivities:
         _adapter.setUserItemClickListener {
                 _, iActivity ->
             run {
-                val action = ActivitiesDirections.
+                val direction = ActivitiesDirections.
                 actionActivitiesFragmentToUserActivityInfo(iActivity as UserActivity)
-                findNavController().navigate(action)
+                findNavController().navigate(direction)
             }
         }
     }

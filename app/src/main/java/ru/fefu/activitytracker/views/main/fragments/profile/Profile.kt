@@ -18,8 +18,8 @@ class Profile: BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState).also {
             binding.bChangePassword.setOnClickListener {
-                val path = ProfileDirections.actionProfileToPasswordChanger()
-                findNavController().navigate(path)
+                val direction = ProfileDirections.actionProfileToPasswordChanger()
+                findNavController().navigate(direction)
             }
         }
     }

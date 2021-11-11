@@ -29,10 +29,10 @@ class MyActivities:
         _adapter.setMyItemClickListener {
             _, activityData ->
             run {
-                val path =
+                val direction =
                     ActivitiesDirections.
                     actionActivitiesFragmentToMyActivityInfo(activityData as MyActivity)
-                findNavController().navigate(path)
+                findNavController().navigate(direction)
             }
         }
     }
