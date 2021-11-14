@@ -16,4 +16,8 @@ class ActivityActivity: AppCompatActivity() {
 
         setContentView(binding.root)
     }
+
+    override fun onBackPressed() {
+       finish()
+    }
 }
