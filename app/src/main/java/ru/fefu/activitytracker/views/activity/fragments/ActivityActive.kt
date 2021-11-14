@@ -17,4 +17,6 @@ class ActivityActive:
 
         super.onViewCreated(view, savedInstanceState)
     }
+
+
 }

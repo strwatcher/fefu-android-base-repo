@@ -7,9 +7,5 @@ import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActivitiesContainerBinding
 
 class ActivitiesContainer:
-    BaseFragment<FragmentActivitiesContainerBinding>(R.layout.fragment_activities_container) {
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-}
+    BaseFragment<FragmentActivitiesContainerBinding>
+        (R.layout.fragment_activities_container)

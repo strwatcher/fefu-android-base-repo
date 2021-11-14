@@ -11,10 +11,11 @@ class PasswordChanger:
     BaseFragment<FragmentProfilePasswordChangerBinding>(R.layout.fragment_profile_password_changer)
 {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         binding.tbTopbar.setNavigationOnClickListener {
             findNavController().popBackStack()
         }
+
+        super.onViewCreated(view, savedInstanceState)
     }
 }

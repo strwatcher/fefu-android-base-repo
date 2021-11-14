@@ -13,24 +13,20 @@ import ru.fefu.activitytracker.models.MyActivity
 class MyActivityInfo:
     BaseFragment<MyActivityCardInfoBinding>(R.layout.my_activity_card_info) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState).also {
-            val data: MyActivity = requireArguments().get("Activity") as MyActivity
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-            binding.tbAction.title = data.name
-            binding.tvMetric.text = data.metric
-            binding.tvStartTimeValue.text = data.startTime
-            binding.tvFinishTimeValue.text = data.finishTime
-            binding.tvDate.text = data.finishDate
+        val data: MyActivity = requireArguments().get("Activity") as MyActivity
 
-            binding.tbAction.setNavigationOnClickListener{
-                findNavController().popBackStack()
-            }
+        binding.tbAction.title = data.name
+        binding.tvMetric.text = data.metric
+        binding.tvStartTimeValue.text = data.startTime
+        binding.tvFinishTimeValue.text = data.finishTime
+        binding.tvDate.text = data.finishDate
 
+        binding.tbAction.setNavigationOnClickListener{
+            findNavController().popBackStack()
         }
+
+        super.onViewCreated(view, savedInstanceState)
     }
 }

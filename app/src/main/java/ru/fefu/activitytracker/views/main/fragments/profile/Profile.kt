@@ -11,16 +11,13 @@ import ru.fefu.activitytracker.databinding.FragmentProfileBinding
 
 class Profile: BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState).also {
-            binding.bChangePassword.setOnClickListener {
-                val direction = ProfileDirections.actionProfileToPasswordChanger()
-                findNavController().navigate(direction)
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding.bChangePassword.setOnClickListener {
+            val direction = ProfileDirections.actionProfileToPasswordChanger()
+            findNavController().navigate(direction)
         }
+
+        super.onViewCreated(view, savedInstanceState)
     }
 }
