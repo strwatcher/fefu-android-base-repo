@@ -40,9 +40,10 @@
 
     <ImageButton
         android:id="@+id/bPause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/light_pink"
+        android:background="@drawable/circle"
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_pause"
         app:layout_constraintEnd_toStartOf="@id/bFinish"
@@ -52,10 +53,11 @@
 
     <ImageButton
         android:id="@+id/bFinish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/circle"
         android:layout_marginStart="16dp"
-        android:background="@null"
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_flag"
         app:layout_constraintEnd_toEndOf="parent"
