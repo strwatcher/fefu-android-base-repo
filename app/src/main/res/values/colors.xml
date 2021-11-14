@@ -13,4 +13,5 @@
     <color name="error">#B00020</color>
     <color name="grey">#808080</color>
     <color name="light">#F0F0F0</color>
+    <color name="line">#E0E0E0</color>
 </resources>

@@ -8,17 +8,34 @@
     <TextView
         android:id="@+id/tvMap"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Карта тут"
-        android:background="@color/dark"
-        android:textColor="@color/white"
-        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:background="#D2D2D2"
         android:gravity="center"
+        android:text="Карта тут"
+        android:textAlignment="center"
+        android:textColor="@color/dark"
         android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
+    <ImageButton
+        android:id="@+id/bBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/ic_arrowback"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
+        android:id="@+id/fvActivityControls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="16dp"

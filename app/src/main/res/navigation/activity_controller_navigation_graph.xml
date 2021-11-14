@@ -10,7 +10,12 @@
         android:label="ActivityStarter" >
         <action
             android:id="@+id/action_activityStarter_to_activityActive"
-            app:destination="@id/activityActive" />
+            app:destination="@id/activityActive">
+            <argument
+                android:name="ActivityType"
+                app:argType="ru.fefu.activitytracker.models.ActivityType"
+                />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/activityActive"
