@@ -16,7 +16,7 @@ class RegistrationActivity: AppCompatActivity() {
         binding = ActivityRegistrationScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.goBackButton.setOnClickListener {
+        binding.tbTopbar.setNavigationOnClickListener {
             finish()
         }
 

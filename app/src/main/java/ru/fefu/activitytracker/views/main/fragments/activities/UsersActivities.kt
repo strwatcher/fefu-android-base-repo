@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.views.main.fragments
+package ru.fefu.activitytracker.views.main.fragments.activities
 
 import android.os.Bundle
 import android.view.View
@@ -6,14 +6,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.databinding.FragmentMyActivitiesBinding
-import ru.fefu.activitytracker.models.MyActivity
+import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
+import ru.fefu.activitytracker.models.UserActivity
 import ru.fefu.activitytracker.views.main.ActivitiesStorage
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 
-class MyActivities:
-    BaseFragment<FragmentMyActivitiesBinding>(R.layout.fragment_my_activities) {
-    private val activities = ActivitiesStorage.getMyActivities()
+class UsersActivities:
+    BaseFragment<FragmentUsersActivitiesBinding>(R.layout.fragment_users_activities) {
+    private val activities = ActivitiesStorage.getUsersActivities()
 
     private val _adapter = ActivitiesViewAdapter(activities)
 
@@ -26,13 +26,12 @@ class MyActivities:
             layoutManager = LinearLayoutManager(requireContext())
         }
 
-        _adapter.setMyItemClickListener {
-            _, activityData ->
+        _adapter.setUserItemClickListener {
+                _, iActivity ->
             run {
-                val action =
-                    ActivitiesDirections.
-                    actionActivitiesFragmentToMyActivityInfo(activityData as MyActivity)
-                findNavController().navigate(action)
+                val direction = ActivitiesDirections.
+                actionActivitiesFragmentToUserActivityInfo(iActivity as UserActivity)
+                findNavController().navigate(direction)
             }
         }
     }

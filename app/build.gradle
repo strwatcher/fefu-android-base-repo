@@ -37,6 +37,19 @@ android {
     buildFeatures {
         viewBinding true
     }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res',
+                        'src\\main\\res\\layouts\\welcome',
+                        'src\\main\\res\\layouts\\main',
+                        'src\\main\\res\\layouts\\main\\activities',
+                        'src\\main\\res\\layouts\\main\\profile',
+                        'src\\main\\res\\layouts\\activity\\',
+                        'src\\main\\res\\layouts\\activity\\fragments'
+            }
+        }
+    }
 }
 
 dependencies {

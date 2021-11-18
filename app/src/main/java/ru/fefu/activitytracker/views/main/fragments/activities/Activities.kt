@@ -1,9 +1,10 @@
-package ru.fefu.activitytracker.views.main.fragments
+package ru.fefu.activitytracker.views.main.fragments.activities
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
@@ -31,5 +32,14 @@ class Activities: BaseFragment<FragmentActivitiesBinding>(R.layout.fragment_acti
 
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.bStartNewActivity.setOnClickListener {
+            val direction = ActivitiesDirections.actionActivitiesFragmentToActivityActivity()
+            findNavController().navigate(direction)
+        }
     }
 }

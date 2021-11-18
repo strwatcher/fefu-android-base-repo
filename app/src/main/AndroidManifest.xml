@@ -33,12 +33,17 @@
         <activity
             android:name=".views.main.MainActivity"
             android:exported="true"
+            android:windowSoftInputMode="adjustNothing"
             >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".views.activity.ActivityActivity"
+            android:exported="true"
+            />
 
     </application>
 

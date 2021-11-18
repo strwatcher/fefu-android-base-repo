@@ -15,9 +15,9 @@ class ActivitiesViewAdapter(staticActivities: List<IListItem>)
 
     private val activities = staticActivities.toMutableList()
     private var myItemClickListener: (Int, IActivity) -> Unit =
-        { position: Int, data: IActivity -> }
+        { _: Int, _: IActivity -> }
     private var userItemClickListener: (Int, IActivity) -> Unit =
-        { position: Int, data: IActivity ->}
+        { _: Int, _: IActivity ->}
 
     override fun getItemViewType(position: Int): Int {
         return activities[position].type.ordinal
