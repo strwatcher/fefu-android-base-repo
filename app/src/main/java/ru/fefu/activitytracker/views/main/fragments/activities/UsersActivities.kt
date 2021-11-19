@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
-import ru.fefu.activitytracker.models.UserActivity
+import ru.fefu.activitytracker.model.UserActivity
 import ru.fefu.activitytracker.views.main.ActivitiesStorage
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 

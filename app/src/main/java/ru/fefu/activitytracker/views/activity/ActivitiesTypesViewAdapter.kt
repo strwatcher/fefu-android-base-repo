@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.models.ActivityType
+import ru.fefu.activitytracker.model.ActivityType
 
 class ActivitiesTypesViewAdapter
     (activitiesTypes: List<ActivityType>)

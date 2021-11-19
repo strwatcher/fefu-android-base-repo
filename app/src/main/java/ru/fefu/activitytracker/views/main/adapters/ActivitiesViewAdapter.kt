@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.models.*
+import ru.fefu.activitytracker.model.*
 import ru.fefu.activitytracker.views.main.viewholders.DateSeparatorViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ListItemViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder

@@ -1,6 +1,6 @@
 package ru.fefu.activitytracker.views.main
 
-import ru.fefu.activitytracker.models.*
+import ru.fefu.activitytracker.model.*
 
 
 class ActivitiesStorage {
