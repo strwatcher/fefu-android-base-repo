@@ -7,17 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActivityStarterBinding
-import ru.fefu.activitytracker.models.ActivityType
+import ru.fefu.activitytracker.model.ActivityType
 import ru.fefu.activitytracker.views.activity.ActivitiesTypesViewAdapter
 
 class ActivityStarter:
     BaseFragment<FragmentActivityStarterBinding>(R.layout.fragment_activity_starter)
 {
-    private val _adapter = ActivitiesTypesViewAdapter(listOf(
-        ActivityType("Бег"),
-        ActivityType("Ходьба"),
-        ActivityType("Велосипед"),
-    ))
+    private val _adapter = ActivitiesTypesViewAdapter(listOf(*ActivityType.values()))
 
     private var selectedActivity: ActivityType? = null
 
