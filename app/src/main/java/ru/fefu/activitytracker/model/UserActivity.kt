@@ -1,8 +1,7 @@
-package ru.fefu.activitytracker.models
+package ru.fefu.activitytracker.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import kotlinx.serialization.Serializable
 
 @Parcelize
 data class UserActivity (

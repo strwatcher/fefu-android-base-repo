@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.models
+package ru.fefu.activitytracker.model
 
 interface IActivity: IListItem {
     val name: String
