@@ -10,10 +10,11 @@ import ru.fefu.activitytracker.views.main.viewholders.ListItemViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 
-class ActivitiesViewAdapter(staticActivities: List<IListItem>)
+class ActivitiesViewAdapter
     : RecyclerView.Adapter<ListItemViewHolder>() {
 
-    private val activities = staticActivities.toMutableList()
+    private lateinit var activities: List<IListItem>
+
     private var myItemClickListener: (Int, IActivity) -> Unit =
         { _: Int, _: IActivity -> }
     private var userItemClickListener: (Int, IActivity) -> Unit =
@@ -57,6 +58,9 @@ class ActivitiesViewAdapter(staticActivities: List<IListItem>)
         userItemClickListener = listener
     }
 
+    fun submitList(list: List<IListItem>) {
+        activities = list.toMutableList()
+    }
 
 
 }

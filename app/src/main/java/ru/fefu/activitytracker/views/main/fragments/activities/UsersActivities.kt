@@ -15,7 +15,7 @@ class UsersActivities:
     BaseFragment<FragmentUsersActivitiesBinding>(R.layout.fragment_users_activities) {
     private val activities = ActivitiesStorage.getUsersActivities()
 
-    private val _adapter = ActivitiesViewAdapter(activities)
+    private val _adapter = ActivitiesViewAdapter()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,6 +25,8 @@ class UsersActivities:
             adapter = _adapter
             layoutManager = LinearLayoutManager(requireContext())
         }
+
+        _adapter.submitList(activities)
 
         _adapter.setUserItemClickListener {
                 _, iActivity ->

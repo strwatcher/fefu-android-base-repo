@@ -1,5 +1,6 @@
 package ru.fefu.activitytracker.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -10,7 +11,7 @@ import ru.fefu.activitytracker.model.ActivityType
 interface ActivityDao {
 
     @Query("select * from my_activities")
-    fun getAll(): List<Activity>
+    fun getAll(): LiveData<List<Activity>>
 
     @Query("select * from my_activities where id=:id")
     fun getById(id: Int): Activity

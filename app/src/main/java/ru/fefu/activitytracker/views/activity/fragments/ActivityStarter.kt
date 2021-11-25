@@ -1,14 +1,19 @@
 package ru.fefu.activitytracker.views.activity.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.database.Activity
 import ru.fefu.activitytracker.databinding.FragmentActivityStarterBinding
 import ru.fefu.activitytracker.model.ActivityType
 import ru.fefu.activitytracker.views.activity.ActivitiesTypesViewAdapter
+import java.time.LocalDateTime
 
 class ActivityStarter:
     BaseFragment<FragmentActivityStarterBinding>(R.layout.fragment_activity_starter)
@@ -17,6 +22,7 @@ class ActivityStarter:
 
     private var selectedActivity: ActivityType? = null
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,6 +47,16 @@ class ActivityStarter:
 
         binding.bStart.setOnClickListener {
             selectedActivity?.let {
+                App.INSTANCE.database.activityDao().insert(
+                    Activity(
+                        0,
+                        selectedActivity!!,
+                        listOf(),
+                        LocalDateTime.now(),
+                        LocalDateTime.now().plusHours(1)
+                    )
+                )
+
                 val direction = ActivityStarterDirections
                     .actionActivityStarterToActivityActive(selectedActivity!!)
                 findNavController().navigate(direction)
