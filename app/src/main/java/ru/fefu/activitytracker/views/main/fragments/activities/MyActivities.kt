@@ -54,6 +54,7 @@ class MyActivities:
             }
 
             _adapter.submitList(packedList)
+            _adapter.notifyDataSetChanged()
         }
 
         _adapter.setMyItemClickListener {

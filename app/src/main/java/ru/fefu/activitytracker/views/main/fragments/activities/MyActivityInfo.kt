@@ -3,6 +3,7 @@ package ru.fefu.activitytracker.views.main.fragments.activities
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.MyActivityCardInfoBinding
@@ -23,6 +24,14 @@ class MyActivityInfo:
 
         binding.tbAction.setNavigationOnClickListener{
             findNavController().popBackStack()
+        }
+
+        binding.tbAction.setOnMenuItemClickListener {
+            if(it.order == 0) {
+                App.INSTANCE.database.activityDao().deleteById(data.id)
+                findNavController().popBackStack()
+            }
+            true
         }
 
         super.onViewCreated(view, savedInstanceState)

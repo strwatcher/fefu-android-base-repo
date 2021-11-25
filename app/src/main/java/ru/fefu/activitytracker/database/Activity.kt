@@ -24,6 +24,7 @@ data class Activity(
     @RequiresApi(Build.VERSION_CODES.O)
     fun toMyActivity(): MyActivity {
         return MyActivity(
+            id,
             type.title,
             coordinates.getDistance().toFormattedDistance(),
             finishTime.toFinishDateOrTime(),

@@ -10,7 +10,7 @@ import ru.fefu.activitytracker.model.ActivityType
 @Dao
 interface ActivityDao {
 
-    @Query("select * from my_activities")
+    @Query("select * from my_activities order by finish_time desc")
     fun getAll(): LiveData<List<Activity>>
 
     @Query("select * from my_activities where id=:id")
@@ -18,6 +18,9 @@ interface ActivityDao {
 
     @Query("select * from my_activities where type=:type")
     fun getByType(type: ActivityType): List<Activity>
+
+    @Query("delete from my_activities where id=:id")
+    fun deleteById(id: Int)
 
     @Insert
     fun insert(activity: Activity)

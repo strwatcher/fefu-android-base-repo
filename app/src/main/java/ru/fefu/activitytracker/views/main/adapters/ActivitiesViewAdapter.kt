@@ -2,6 +2,7 @@ package ru.fefu.activitytracker.views.main.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.model.*
@@ -13,7 +14,7 @@ import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 class ActivitiesViewAdapter
     : RecyclerView.Adapter<ListItemViewHolder>() {
 
-    private lateinit var activities: List<IListItem>
+    private var activities: List<IListItem> = listOf()
 
     private var myItemClickListener: (Int, IActivity) -> Unit =
         { _: Int, _: IActivity -> }
@@ -61,6 +62,8 @@ class ActivitiesViewAdapter
     fun submitList(list: List<IListItem>) {
         activities = list.toMutableList()
     }
+
+
 
 
 }

@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class MyActivity(
+    val id: Int,
     override val name: String,
     override val metric: String,
     override val finishDate: String,

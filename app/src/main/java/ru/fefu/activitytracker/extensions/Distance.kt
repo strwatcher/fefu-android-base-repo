@@ -2,8 +2,6 @@ package ru.fefu.activitytracker.extensions
 
 import android.location.Location
 import java.lang.IllegalStateException
-import kotlin.math.absoluteValue
-import kotlin.math.ceil
 
 fun List<Pair<Double, Double>>.getDistance(): Double {
 
@@ -32,7 +30,7 @@ fun Double.toFormattedDistance(): String {
     return when {
         km > 0 && m > 0 -> "$km км. $m м."
         km > 0 -> "$km км."
-        m > 0 -> "$m м."
+        m >= 0 -> "$m м."
         else -> throw(IllegalStateException("Distance can't be negative"))
     }
 
