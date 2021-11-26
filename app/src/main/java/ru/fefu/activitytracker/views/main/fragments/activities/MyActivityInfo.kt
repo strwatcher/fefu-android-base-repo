@@ -27,13 +27,21 @@ class MyActivityInfo:
         }
 
         binding.tbAction.setOnMenuItemClickListener {
-            if(it.order == 0) {
-                App.INSTANCE.database.activityDao().deleteById(data.id)
-                findNavController().popBackStack()
+            when (it.order) {
+                MenuItemType.Delete.ordinal -> {
+                    App.INSTANCE.database.activityDao().deleteById(data.id)
+                    findNavController().popBackStack()
+                }
+                else -> {}
             }
             true
         }
 
         super.onViewCreated(view, savedInstanceState)
     }
+}
+
+internal enum class MenuItemType {
+    Delete,
+    Share
 }

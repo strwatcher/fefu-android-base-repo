@@ -2,6 +2,7 @@ package ru.fefu.activitytracker.views.main.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
@@ -12,9 +13,7 @@ import ru.fefu.activitytracker.views.main.viewholders.ActivityViewHolder
 import ru.fefu.activitytracker.views.main.viewholders.UserActivityViewHolder
 
 class ActivitiesViewAdapter
-    : RecyclerView.Adapter<ListItemViewHolder>() {
-
-    private var activities: List<IListItem> = listOf()
+    : ListAdapter<IListItem, ListItemViewHolder>(ListItemCallback()) {
 
     private var myItemClickListener: (Int, IActivity) -> Unit =
         { _: Int, _: IActivity -> }
@@ -22,7 +21,7 @@ class ActivitiesViewAdapter
         { _: Int, _: IActivity ->}
 
     override fun getItemViewType(position: Int): Int {
-        return activities[position].type.ordinal
+        return currentList[position].type.ordinal
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
@@ -46,10 +45,10 @@ class ActivitiesViewAdapter
 
     }
 
-    override fun getItemCount(): Int = activities.size
+    override fun getItemCount(): Int = currentList.size
 
     override fun onBindViewHolder(holder: ListItemViewHolder, position: Int) {
-        holder.bind(activities[position])
+        holder.bind(currentList[position])
     }
 
     fun setMyItemClickListener(listener: (Int, IActivity) -> Unit) {
@@ -58,11 +57,39 @@ class ActivitiesViewAdapter
     fun setUserItemClickListener(listener: (Int, IActivity) -> Unit) {
         userItemClickListener = listener
     }
+}
 
-    fun submitList(list: List<IListItem>) {
-        activities = list.toMutableList()
+internal class ListItemCallback : DiffUtil.ItemCallback<IListItem>() {
+    override fun areItemsTheSame(oldItem: IListItem, newItem: IListItem): Boolean {
+        return when {
+            oldItem.type == ListItems.DateSeparator &&
+                    newItem.type == ListItems.DateSeparator -> {
+                (oldItem as DateSeparator).formattedDate == (newItem as DateSeparator).formattedDate
+            }
+            oldItem.type == ListItems.MyCard && newItem.type == ListItems.MyCard ->
+                (oldItem as MyActivity).id == (newItem as MyActivity).id
+
+            //TODO user card behaviour
+
+            else -> false
+        }
     }
 
+    override fun areContentsTheSame(oldItem: IListItem, newItem: IListItem): Boolean {
+        return when {
+            oldItem.type == ListItems.DateSeparator &&
+                    newItem.type == ListItems.DateSeparator ->
+                areItemsTheSame(oldItem, newItem)
+
+            oldItem.type == ListItems.MyCard && newItem.type == ListItems.MyCard ->
+                (oldItem as MyActivity) == (newItem as MyActivity)
+
+            //TODO user card behaviour
+
+            else -> false
+        }
+
+    }
 
 
 
