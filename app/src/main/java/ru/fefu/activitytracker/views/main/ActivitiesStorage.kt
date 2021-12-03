@@ -1,47 +1,10 @@
 package ru.fefu.activitytracker.views.main
 
-import ru.fefu.activitytracker.models.*
+import ru.fefu.activitytracker.model.*
 
 
 class ActivitiesStorage {
     companion object {
-        @JvmStatic
-        fun getMyActivities(): List<IListItem> =
-            listOf(
-                DateSeparator("Сегодня"),
-                MyActivity(
-                    name = "Бег",
-                    metric = "4 км 100 м",
-                    finishDate = "12 часов назад",
-                    duration = "12 минут 45 секунд",
-                    startTime = "13:00",
-                    finishTime = "13:13"
-                ),
-
-                DateSeparator("Вчера"),
-
-                MyActivity(
-                    name = "Сёрфинг",
-                    metric = "1 км",
-                    finishDate = "25.10.2021",
-                    duration = "1 час 10 минут",
-                    startTime = "14:20",
-                    finishTime = "15:30"
-                ),
-
-                DateSeparator("Октябрь 2021 года"),
-
-                MyActivity(
-                    name = "Велосипед",
-                    metric = "15 км",
-                    finishDate = "12.10.2021",
-                    duration = "2 часа 13 минут",
-                    startTime = "09:10",
-                    finishTime = "11:23"
-                ),
-            )
-
-
         @JvmStatic
         fun getUsersActivities(): List<IListItem> =
             listOf(

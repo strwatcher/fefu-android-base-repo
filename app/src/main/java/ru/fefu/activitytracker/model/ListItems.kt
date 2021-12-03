@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker.models
+package ru.fefu.activitytracker.model
 
 enum class ListItems {
     MyCard,

@@ -13,7 +13,7 @@
             app:destination="@id/activityActive">
             <argument
                 android:name="ActivityType"
-                app:argType="ru.fefu.activitytracker.models.ActivityType"
+                app:argType="ru.fefu.activitytracker.model.ActivityType"
                 />
         </action>
     </fragment>

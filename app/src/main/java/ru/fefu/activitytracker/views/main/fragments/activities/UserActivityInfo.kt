@@ -1,14 +1,12 @@
 package ru.fefu.activitytracker.views.main.fragments.activities
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.UserActivityCardInfoBinding
-import ru.fefu.activitytracker.models.UserActivity
+import ru.fefu.activitytracker.model.UserActivity
 
 class UserActivityInfo:
     BaseFragment<UserActivityCardInfoBinding>(R.layout.user_activity_card_info) {

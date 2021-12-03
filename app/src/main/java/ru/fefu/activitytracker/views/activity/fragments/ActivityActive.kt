@@ -5,7 +5,7 @@ import android.view.View
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentActivityActiveBinding
-import ru.fefu.activitytracker.models.ActivityType
+import ru.fefu.activitytracker.model.ActivityType
 
 class ActivityActive:
     BaseFragment<FragmentActivityActiveBinding>(R.layout.fragment_activity_active)
@@ -13,7 +13,7 @@ class ActivityActive:
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val activityType = requireArguments()["ActivityType"] as ActivityType
 
-        binding.tvActivityType.text = activityType.name
+        binding.tvActivityType.text = activityType.title
 
         super.onViewCreated(view, savedInstanceState)
     }

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.FragmentUsersActivitiesBinding
-import ru.fefu.activitytracker.models.UserActivity
+import ru.fefu.activitytracker.model.UserActivity
 import ru.fefu.activitytracker.views.main.ActivitiesStorage
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 
@@ -15,7 +15,7 @@ class UsersActivities:
     BaseFragment<FragmentUsersActivitiesBinding>(R.layout.fragment_users_activities) {
     private val activities = ActivitiesStorage.getUsersActivities()
 
-    private val _adapter = ActivitiesViewAdapter(activities)
+    private val _adapter = ActivitiesViewAdapter()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,6 +25,8 @@ class UsersActivities:
             adapter = _adapter
             layoutManager = LinearLayoutManager(requireContext())
         }
+
+        _adapter.submitList(activities)
 
         _adapter.setUserItemClickListener {
                 _, iActivity ->

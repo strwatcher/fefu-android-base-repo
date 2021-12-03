@@ -4,10 +4,9 @@ import android.annotation.SuppressLint
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.fefu.activitytracker.models.IListItem
+import ru.fefu.activitytracker.model.IListItem
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.models.IActivity
-import ru.fefu.activitytracker.models.MyActivity
+import ru.fefu.activitytracker.model.IActivity
 
 open class ActivityViewHolder(itemView: View, listener: (Int, IActivity) -> Unit)
     : ListItemViewHolder(itemView) {

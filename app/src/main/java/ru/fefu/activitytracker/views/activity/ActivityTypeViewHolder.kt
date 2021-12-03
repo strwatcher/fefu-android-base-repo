@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.fefu.activitytracker.R
-import ru.fefu.activitytracker.models.ActivityType
+import ru.fefu.activitytracker.model.ActivityType
 
 class ActivityTypeViewHolder(
     view: View,
@@ -24,7 +24,7 @@ class ActivityTypeViewHolder(
 
     @SuppressLint
     fun bind(type: ActivityType) {
-        tvActivityType.text = type.name
+        tvActivityType.text = type.title
         activityType = type
 
     }

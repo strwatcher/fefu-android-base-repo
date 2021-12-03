@@ -14,7 +14,7 @@
             app:launchSingleTop="false">
             <argument
                 android:name="Activity"
-                app:argType="ru.fefu.activitytracker.models.MyActivity"
+                app:argType="ru.fefu.activitytracker.model.MyActivity"
                 />
         </action>
         <action
@@ -22,7 +22,7 @@
             app:destination="@id/userActivityInfo" >
             <argument
                 android:name="Activity"
-                app:argType="ru.fefu.activitytracker.models.UserActivity"/>
+                app:argType="ru.fefu.activitytracker.model.UserActivity"/>
         </action>
         <action
             android:id="@+id/action_activitiesFragment_to_activityActivity"

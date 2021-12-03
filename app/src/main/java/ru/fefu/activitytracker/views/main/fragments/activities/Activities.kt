@@ -37,9 +37,6 @@ class Activities: BaseFragment<FragmentActivitiesBinding>(R.layout.fragment_acti
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.bStartNewActivity.setOnClickListener {
-            val direction = ActivitiesDirections.actionActivitiesFragmentToActivityActivity()
-            findNavController().navigate(direction)
-        }
+
     }
 }
