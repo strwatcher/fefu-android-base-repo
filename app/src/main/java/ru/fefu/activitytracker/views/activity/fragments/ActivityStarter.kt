@@ -14,6 +14,7 @@ import ru.fefu.activitytracker.databinding.FragmentActivityStarterBinding
 import ru.fefu.activitytracker.model.ActivityType
 import ru.fefu.activitytracker.views.activity.ActivitiesTypesViewAdapter
 import java.time.LocalDateTime
+import ru.fefu.activitytracker.views.activity.ActivityActivity
 
 class ActivityStarter:
     BaseFragment<FragmentActivityStarterBinding>(R.layout.fragment_activity_starter)
@@ -46,20 +47,23 @@ class ActivityStarter:
         }
 
         binding.bStart.setOnClickListener {
-            selectedActivity?.let {
-                App.INSTANCE.database.activityDao().insert(
-                    Activity(
-                        0,
-                        selectedActivity!!,
-                        listOf(),
-                        LocalDateTime.now().minusHours(1),
-                        LocalDateTime.now(),
-                    )
-                )
+            (activity as ActivityActivity).requestLocationPermissionAndDoAction {
 
-                val direction = ActivityStarterDirections
-                    .actionActivityStarterToActivityActive(selectedActivity!!)
-                findNavController().navigate(direction)
+                selectedActivity?.let {
+                    App.INSTANCE.database.activityDao().insert(
+                        Activity(
+                            0,
+                            selectedActivity!!,
+                            listOf(),
+                            LocalDateTime.now().minusHours(1),
+                            LocalDateTime.now(),
+                        )
+                    )
+
+                    val direction = ActivityStarterDirections
+                        .actionActivityStarterToActivityActive(selectedActivity!!)
+                    findNavController().navigate(direction)
+                }
             }
         }
     }
