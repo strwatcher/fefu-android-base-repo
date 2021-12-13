@@ -53,6 +53,9 @@
             android:exported="true"
             />
 
+        <service android:name=".views.activity.ActivityService"
+            android:foregroundServiceType="location"/>
+
     </application>
 
 </manifest>

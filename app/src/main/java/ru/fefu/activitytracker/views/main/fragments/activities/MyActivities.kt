@@ -1,10 +1,7 @@
 package ru.fefu.activitytracker.views.main.fragments.activities
 
-import android.os.Build
 import android.os.Bundle
-import android.transition.Visibility
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.App
@@ -17,7 +14,6 @@ import ru.fefu.activitytracker.model.DateSeparator
 import ru.fefu.activitytracker.model.IActivity
 import ru.fefu.activitytracker.model.IListItem
 import ru.fefu.activitytracker.model.MyActivity
-import ru.fefu.activitytracker.views.main.ActivitiesStorage
 import ru.fefu.activitytracker.views.main.adapters.ActivitiesViewAdapter
 
 class MyActivities:
@@ -26,7 +22,6 @@ class MyActivities:
     private val _adapter = ActivitiesViewAdapter()
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -64,7 +59,6 @@ class MyActivities:
         findNavController().navigate(direction)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun packActivities(activitiesList: List<Activity>): List<IListItem> {
         val activitiesMap = mutableMapOf<String, MutableList<MyActivity>>()
 
