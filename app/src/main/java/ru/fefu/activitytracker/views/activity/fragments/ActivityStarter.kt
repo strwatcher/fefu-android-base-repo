@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.App
@@ -27,6 +28,16 @@ class ActivityStarter:
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if ((activity as ActivityActivity).activityId != -1) {
+            val navController = findNavController()
+            navController.navigate(
+                ActivityStarterDirections.actionActivityStarterToActivityActive(
+                    (activity as ActivityActivity).activityId,
+                    true
+                )
+            )
+        }
 
         with(binding.recyclerView) {
             adapter = _adapter
@@ -56,11 +67,11 @@ class ActivityStarter:
                         selectedActivity!!,
                         listOf(),
                         LocalDateTime.now(),
-                        LocalDateTime.now(),
+                        null
                     )
                 ).toInt()
                 val direction = ActivityStarterDirections
-                    .actionActivityStarterToActivityActive(selectedActivity!!, activityId)
+                    .actionActivityStarterToActivityActive(activityId, false)
 
                 findNavController().navigate(direction)
             }

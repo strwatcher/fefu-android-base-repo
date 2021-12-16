@@ -1,7 +1,10 @@
 package ru.fefu.activitytracker.views.main.fragments.activities
 
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.App
@@ -42,12 +45,52 @@ class MyActivities:
 
         _adapter.setMyItemClickListener(::myActivityClickListener)
 
-        binding.bStartNewActivity.setOnClickListener(::newActivityStarterListener)
+        switchButtonBehaviour()
+
+
     }
 
+    override fun onResume() {
+        super.onResume()
+        switchButtonBehaviour()
+    }
+
+    private fun switchButtonBehaviour() {
+        val lastActivity = App.INSTANCE.database.activityDao().getLast()
+
+        lastActivity?.let {
+            lastActivity.finishTime?.let {
+                binding.bStartNewActivity.setImageDrawable(
+                    ContextCompat.getDrawable(requireContext(), R.drawable.ic_triangle)
+                )
+                binding.bStartNewActivity.setOnClickListener(::newActivityStarterListener)
+            } ?: run {
+                binding.bStartNewActivity.setImageDrawable(
+                    ContextCompat.getDrawable(requireContext(), R.drawable.ic_activity_started_timer)
+                )
+                binding.bStartNewActivity.setOnClickListener {
+                    continueStartedActivity(lastActivity.id)
+                }
+            }
+        } ?: run {
+            binding.bStartNewActivity.setImageDrawable(
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_triangle)
+            )
+            binding.bStartNewActivity.setOnClickListener(::newActivityStarterListener)
+        }
+    }
 
     private fun newActivityStarterListener(view: View) {
+        println("aaa")
         val direction = ActivitiesDirections.actionActivitiesFragmentToActivityActivity()
+        findNavController().navigate(direction)
+    }
+
+    private fun continueStartedActivity(activityId: Int) {
+        println("bbb")
+        val direction = ActivitiesDirections.actionActivitiesFragmentToActivityActivity(
+            activityId = activityId
+        )
         findNavController().navigate(direction)
     }
 
@@ -63,11 +106,13 @@ class MyActivities:
         val activitiesMap = mutableMapOf<String, MutableList<MyActivity>>()
 
         activitiesList.forEach {
-            if (!activitiesMap.containsKey(it.finishTime.toDateSeparator())) {
-                activitiesMap[it.finishTime.toDateSeparator()] = mutableListOf()
-            }
+            it.finishTime?.let { finishTime ->
+                if (!activitiesMap.containsKey(finishTime.toDateSeparator())) {
+                    activitiesMap[finishTime.toDateSeparator()] = mutableListOf()
+                }
 
-            activitiesMap[it.finishTime.toDateSeparator()]?.add(it.toMyActivity())
+                activitiesMap[finishTime.toDateSeparator()]?.add(it.toMyActivity())
+            }
         }
 
         val packedList = mutableListOf<IListItem>()

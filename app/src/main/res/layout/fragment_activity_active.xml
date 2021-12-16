@@ -36,18 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvActivityType" />
 
-    <ImageButton
-        android:id="@+id/bPause"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:backgroundTint="@color/light_pink"
-        android:background="@drawable/circle"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/ic_pause"
-        app:layout_constraintEnd_toStartOf="@id/bFinish"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDistance" />
 
     <ImageButton
         android:id="@+id/bFinish"
@@ -55,12 +43,11 @@
         android:layout_height="56dp"
         android:backgroundTint="@color/primary"
         android:background="@drawable/circle"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_flag"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toBottomOf="@id/tvDistance"
-        app:layout_constraintStart_toEndOf="@+id/bPause"
+        app:layout_constraintStart_toStartOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

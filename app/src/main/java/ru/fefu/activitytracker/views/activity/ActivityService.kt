@@ -11,7 +11,6 @@ import android.content.pm.PackageManager
 import android.os.IBinder
 import android.os.Looper
 import android.util.Log
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.LocationCallback
@@ -21,7 +20,7 @@ import com.google.android.gms.location.LocationServices
 import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.database.ActivityPathUpdate
-import ru.fefu.activitytracker.extensions.getDistance
+import ru.fefu.activitytracker.extensions.distanceTo
 
 class ActivityService: Service() {
     companion object {
@@ -35,12 +34,11 @@ class ActivityService: Service() {
             get() = LocationRequest.create()
                 .setInterval(5000L)
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setSmallestDisplacement(10f)
+                .setSmallestDisplacement(30f)
 
         private val coordinates = mutableListOf<Pair<Double, Double>>()
         var activityId = -1
         var distance = 0.0
-        var isWorking = false
 
 
         fun startForegroundTracking(context: Context, id: Int) {
@@ -56,6 +54,7 @@ class ActivityService: Service() {
                 putExtra(EXTRA_ID, id)
                 action = ACTION_CANCEL
             }
+
             ContextCompat.startForegroundService(context, intent)
         }
 
@@ -77,17 +76,16 @@ class ActivityService: Service() {
         Log.d(TAG, "onStartCommand: ${intent?.getIntExtra(EXTRA_ID, -1)}")
         when (intent?.action) {
             ACTION_CANCEL -> {
-                isWorking = false
                 coordinates.clear()
                 distance = 0.0
                 activityId = -1
+
                 stopLocationUpdates()
                 stopForeground(true)
                 stopSelf()
                 return START_NOT_STICKY
             }
             ACTION_START -> {
-                isWorking = true
                 startLocationUpdates(intent.getIntExtra(EXTRA_ID, -1))
                 return START_REDELIVER_INTENT
             }
@@ -129,29 +127,21 @@ class ActivityService: Service() {
 
     private fun showNotification() {
         createChannelIfNeeded()
+
+        val intent = Intent(applicationContext, ActivityActivity::class.java)
+        intent.putExtra("activityId", activityId)
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,
-            Intent(this, ActivityActivity::class.java),
-            PendingIntent.FLAG_IMMUTABLE
+            intent,
+            PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        val cancelIntent = Intent(this, ActivityService::class.java).apply {
-            action = ACTION_CANCEL
-        }
-
-        val cancelPendingIntent = PendingIntent.getService(
-            this,
-            1,
-            cancelIntent,
-            PendingIntent.FLAG_IMMUTABLE
-        )
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle("Хэлоу")
             .setContentText("Отслеживаю вашу активность")
             .setSmallIcon(R.drawable.ic_location_icon)
             .setContentIntent(pendingIntent)
-            .addAction(R.drawable.ic_location_icon, "Остановить", cancelPendingIntent)
             .build()
 
         startForeground(1, notification)
@@ -180,7 +170,9 @@ class ActivityService: Service() {
                 coordinates
             ))
 
-            distance = coordinates.getDistance()
+            if (coordinates.size > 1) {
+                distance += coordinates.last().distanceTo(coordinates[coordinates.lastIndex - 1])
+            }
 
             Log.d(TAG, "Latitude: ${lastLocation.latitude}; Longitude: ${lastLocation.longitude}")
         }

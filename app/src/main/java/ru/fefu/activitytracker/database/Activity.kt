@@ -15,14 +15,14 @@ data class Activity(
     val type: ActivityType,
     val coordinates: List<Pair<Double, Double>>,
     @ColumnInfo(name = "start_time") val startTime: LocalDateTime,
-    @ColumnInfo(name = "finish_time") val finishTime: LocalDateTime,
+    @ColumnInfo(name = "finish_time") val finishTime: LocalDateTime?,
 ) {
     fun toMyActivity(): MyActivity {
         return MyActivity(
             id,
             type.title,
             coordinates.getDistance().toFormattedDistance(),
-            finishTime.toFinishDateOrTime(),
+            finishTime!!.toFinishDateOrTime(),
             Duration.between(startTime, finishTime).toFormattedDurationBetween(),
             startTime.toTime(),
             finishTime.toTime(),

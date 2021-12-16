@@ -9,11 +9,13 @@ import android.graphics.BitmapFactory
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.common.api.ResolvableApiException
@@ -28,6 +30,7 @@ import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityActivityBinding
+import ru.fefu.activitytracker.views.activity.fragments.ActivityStarterDirections
 import java.lang.Exception
 
 class ActivityActivity: AppCompatActivity() {
@@ -36,8 +39,8 @@ class ActivityActivity: AppCompatActivity() {
         private const val REQUEST_CODE_RESOLVE_GOOGLE_API_ERROR = 1337
         private const val REQUEST_CODE_RESOLVE_GPS_ERROR = 1338
     }
-    
-    private lateinit var binding: ActivityActivityBinding
+
+    lateinit var binding: ActivityActivityBinding
 
     val polyline by lazy {
         Polyline().apply {
@@ -69,8 +72,14 @@ class ActivityActivity: AppCompatActivity() {
             }
         }
 
+    var activityId: Int = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        val bundle = intent.extras
+        activityId = bundle?.getInt("activityId") ?: -1
+        println(activityId)
         super.onCreate(savedInstanceState)
+
         Configuration.getInstance().load(this, getPreferences(Context.MODE_PRIVATE))
         requestLocationPermissionAndDoAction(::startLocationTracking)
 
@@ -135,13 +144,14 @@ class ActivityActivity: AppCompatActivity() {
     private fun initMap() {
         binding.mvMap.minZoomLevel = 4.0
 
-        val eventReceiver = object : MapEventsReceiver {
+        val eventReceiver = object: MapEventsReceiver {
             override fun singleTapConfirmedHelper(p: GeoPoint?): Boolean {
-               polyline.addPoint(p)
                return true
             }
 
-            override fun longPressHelper(p: GeoPoint?): Boolean = false
+            override fun longPressHelper(p: GeoPoint?): Boolean {
+                return true
+            }
         }
 
         binding.mvMap.overlays.add(MapEventsOverlay(eventReceiver))
@@ -226,4 +236,6 @@ class ActivityActivity: AppCompatActivity() {
             )
         }
     }
+
+
 }

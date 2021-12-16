@@ -20,6 +20,9 @@ interface ActivityDao {
     @Query("select * from my_activities where type=:type")
     fun getByType(type: ActivityType): List<Activity>
 
+    @Query("select * from my_activities order by start_time desc limit 1")
+    fun getLast(): Activity?
+
     @Query("delete from my_activities where id=:id")
     fun deleteById(id: Int)
 

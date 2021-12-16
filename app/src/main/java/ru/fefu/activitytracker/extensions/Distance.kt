@@ -17,6 +17,13 @@ fun List<Pair<Double, Double>>.getDistance(): Double {
     return result.toDouble()
 }
 
+fun Pair<Double, Double>.distanceTo(other: Pair<Double, Double>): Double {
+    val location1 = locationOfCoordinates(first, second)
+    val location2 = locationOfCoordinates(other.first, other.second)
+
+    return location1.distanceTo(location2).toDouble()
+}
+
 fun Double.toFormattedDistance(): String {
 
     val ceilDistance = toInt()
