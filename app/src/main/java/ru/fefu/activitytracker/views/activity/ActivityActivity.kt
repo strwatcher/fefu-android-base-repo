@@ -8,7 +8,6 @@ import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.location.Location
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
@@ -18,12 +17,10 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.common.api.ResolvableApiException
-import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.LocationSettingsRequest
 import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
-import org.osmdroid.util.BoundingBox
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Polyline
@@ -36,13 +33,13 @@ import java.lang.Exception
 class ActivityActivity: AppCompatActivity() {
     
     companion object {
-        private const val REQUEST_CODE_RESOLVE_GOOGEL_API_ERROR = 1337
+        private const val REQUEST_CODE_RESOLVE_GOOGLE_API_ERROR = 1337
         private const val REQUEST_CODE_RESOLVE_GPS_ERROR = 1338
     }
     
     private lateinit var binding: ActivityActivityBinding
 
-    private val polyline by lazy {
+    val polyline by lazy {
         Polyline().apply {
             outlinePaint.color = ContextCompat.getColor(
                 this@ActivityActivity,
@@ -62,8 +59,7 @@ class ActivityActivity: AppCompatActivity() {
                 if (it) {
                     showUserLocation()
                 } else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
-                        !shouldShowRequestPermissionRationale(Manifest.permission_group.LOCATION)
+                    if (!shouldShowRequestPermissionRationale(Manifest.permission_group.LOCATION)
                     ) {
                         showPermissionDeniedDialog()
                     } else {
@@ -84,6 +80,7 @@ class ActivityActivity: AppCompatActivity() {
         }
         setContentView(binding.root)
         initMap()
+
     }
 
     override fun onBackPressed() {
@@ -91,7 +88,7 @@ class ActivityActivity: AppCompatActivity() {
     }
 
 
-    fun requestLocationPermissionAndDoAction(action: () -> Unit) {
+    private fun requestLocationPermissionAndDoAction(action: () -> Unit) {
         when {
             ContextCompat.checkSelfPermission(
                 this,
@@ -100,7 +97,7 @@ class ActivityActivity: AppCompatActivity() {
                 action()
             }
 
-            Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(
+            shouldShowRequestPermissionRationale(
                 Manifest.permission_group.LOCATION
             ) -> {
                 showRationaleDialog()
@@ -138,18 +135,6 @@ class ActivityActivity: AppCompatActivity() {
     private fun initMap() {
         binding.mvMap.minZoomLevel = 4.0
 
-        binding.mvMap.post {
-            binding.mvMap.zoomToBoundingBox(
-                BoundingBox(
-                    43.232111,
-                    132.117062,
-                    42.968866,
-                    131.768039
-                ),
-                false
-            )
-        }
-
         val eventReceiver = object : MapEventsReceiver {
             override fun singleTapConfirmedHelper(p: GeoPoint?): Boolean {
                polyline.addPoint(p)
@@ -171,7 +156,7 @@ class ActivityActivity: AppCompatActivity() {
             googleApiAvailability.getErrorDialog(
                 this,
                 result,
-                REQUEST_CODE_RESOLVE_GOOGEL_API_ERROR
+                REQUEST_CODE_RESOLVE_GOOGLE_API_ERROR
             )?.show()
         } else {
             Toast.makeText(
@@ -188,10 +173,7 @@ class ActivityActivity: AppCompatActivity() {
             .checkLocationSettings(
                 LocationSettingsRequest.Builder()
                     .addLocationRequest(
-                        LocationRequest.create()
-                        .setInterval(10000L)
-                        .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                        .setSmallestDisplacement(20f)
+                        ActivityService.locationRequest
                     )
                     .build()
             )
@@ -232,7 +214,7 @@ class ActivityActivity: AppCompatActivity() {
         if (isGooglePlayServicesAvailable()) {
             checkIfGpsEnabled(
                 {
-                    showUserLocation()
+                   showUserLocation()
                 },
                 {
                     if (it is ResolvableApiException) {

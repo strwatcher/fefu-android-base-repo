@@ -17,7 +17,6 @@ data class Activity(
     @ColumnInfo(name = "start_time") val startTime: LocalDateTime,
     @ColumnInfo(name = "finish_time") val finishTime: LocalDateTime,
 ) {
-
     fun toMyActivity(): MyActivity {
         return MyActivity(
             id,
@@ -29,5 +28,9 @@ data class Activity(
             finishTime.toTime(),
         )
     }
-
 }
+
+data class ActivityPathUpdate(
+    val id: Int,
+    val coordinates: List<Pair<Double, Double>>,
+)

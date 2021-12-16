@@ -15,18 +15,18 @@ import ru.fefu.activitytracker.model.ActivityType
 import ru.fefu.activitytracker.views.activity.ActivitiesTypesViewAdapter
 import java.time.LocalDateTime
 import ru.fefu.activitytracker.views.activity.ActivityActivity
+import ru.fefu.activitytracker.views.activity.ActivityService
 
 class ActivityStarter:
     BaseFragment<FragmentActivityStarterBinding>(R.layout.fragment_activity_starter)
 {
     private val _adapter = ActivitiesTypesViewAdapter(listOf(*ActivityType.values()))
 
+
     private var selectedActivity: ActivityType? = null
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         with(binding.recyclerView) {
             adapter = _adapter
@@ -36,6 +36,7 @@ class ActivityStarter:
                 false
             )
         }
+
 
         _adapter.setItemClickListener {
             position, activityType ->
@@ -47,23 +48,21 @@ class ActivityStarter:
         }
 
         binding.bStart.setOnClickListener {
-            (activity as ActivityActivity).requestLocationPermissionAndDoAction {
+            selectedActivity?.let {
 
-                selectedActivity?.let {
-                    App.INSTANCE.database.activityDao().insert(
-                        Activity(
-                            0,
-                            selectedActivity!!,
-                            listOf(),
-                            LocalDateTime.now().minusHours(1),
-                            LocalDateTime.now(),
-                        )
+                val activityId = App.INSTANCE.database.activityDao().insert(
+                    Activity(
+                        0,
+                        selectedActivity!!,
+                        listOf(),
+                        LocalDateTime.now(),
+                        LocalDateTime.now(),
                     )
+                ).toInt()
+                val direction = ActivityStarterDirections
+                    .actionActivityStarterToActivityActive(selectedActivity!!, activityId)
 
-                    val direction = ActivityStarterDirections
-                        .actionActivityStarterToActivityActive(selectedActivity!!)
-                    findNavController().navigate(direction)
-                }
+                findNavController().navigate(direction)
             }
         }
     }

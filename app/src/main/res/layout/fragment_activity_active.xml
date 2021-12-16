@@ -8,7 +8,6 @@
         android:id="@+id/tvActivityType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Велосипед"
         android:textSize="24sp"
         android:textColor="@color/dark"
         android:textStyle="bold"
@@ -21,7 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="14 км"
         android:textSize="24sp"
         android:textColor="@color/dark"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +27,9 @@
         />
 
     <TextView
+        android:id="@+id/tvTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:01:46"
         android:layout_marginTop="8dp"
         android:textColor="@color/dark"
         android:textSize="24sp"
