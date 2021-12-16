@@ -40,6 +40,7 @@ class ActivityService: Service() {
         private val coordinates = mutableListOf<Pair<Double, Double>>()
         var activityId = -1
         var distance = 0.0
+        var isWorking = false
 
 
         fun startForegroundTracking(context: Context, id: Int) {
@@ -49,6 +50,15 @@ class ActivityService: Service() {
             intent.action = ACTION_START
             ContextCompat.startForegroundService(context, intent)
         }
+
+        fun stopForegroundTracking(context: Context, id: Int) {
+            val intent = Intent(context, ActivityService::class.java).apply {
+                putExtra(EXTRA_ID, id)
+                action = ACTION_CANCEL
+            }
+            ContextCompat.startForegroundService(context, intent)
+        }
+
     }
 
     private val fusedLocationClient by lazy { LocationServices.getFusedLocationProviderClient(this) }
@@ -67,6 +77,7 @@ class ActivityService: Service() {
         Log.d(TAG, "onStartCommand: ${intent?.getIntExtra(EXTRA_ID, -1)}")
         when (intent?.action) {
             ACTION_CANCEL -> {
+                isWorking = false
                 coordinates.clear()
                 distance = 0.0
                 activityId = -1
@@ -76,6 +87,7 @@ class ActivityService: Service() {
                 return START_NOT_STICKY
             }
             ACTION_START -> {
+                isWorking = true
                 startLocationUpdates(intent.getIntExtra(EXTRA_ID, -1))
                 return START_REDELIVER_INTENT
             }

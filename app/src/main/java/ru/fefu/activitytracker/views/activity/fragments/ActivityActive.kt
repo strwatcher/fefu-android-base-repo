@@ -7,6 +7,7 @@ import org.osmdroid.util.GeoPoint
 import ru.fefu.activitytracker.App
 import ru.fefu.activitytracker.BaseFragment
 import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.database.ActivityFinishTimeUpdate
 import ru.fefu.activitytracker.databinding.FragmentActivityActiveBinding
 import ru.fefu.activitytracker.extensions.toFormattedDistance
 import ru.fefu.activitytracker.extensions.toTimerFormat
@@ -39,7 +40,7 @@ class ActivityActive:
                 }
             }
 
-        GlobalScope.launch {
+        val uiJob = GlobalScope.launch {
             withContext(Dispatchers.IO) {
                 while (true) {
                     activity?.runOnUiThread {
@@ -53,6 +54,15 @@ class ActivityActive:
             }
         }
 
+        binding.bFinish.setOnClickListener {
+            ActivityService.stopForegroundTracking(activity!!, activityId)
+
+            App.INSTANCE.database.activityDao().updateFinishTime(
+                ActivityFinishTimeUpdate(activityId, LocalDateTime.now())
+            )
+
+            uiJob.cancel()
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 

@@ -26,6 +26,9 @@ interface ActivityDao {
     @Update(entity = Activity::class)
     fun updatePath(updateObj: ActivityPathUpdate)
 
+    @Update(entity = Activity::class)
+    fun updateFinishTime(updateObj: ActivityFinishTimeUpdate)
+
     @Insert
     fun insert(activity: Activity) : Long
 

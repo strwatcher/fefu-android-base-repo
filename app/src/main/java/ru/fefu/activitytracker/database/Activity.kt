@@ -34,3 +34,8 @@ data class ActivityPathUpdate(
     val id: Int,
     val coordinates: List<Pair<Double, Double>>,
 )
+
+data class ActivityFinishTimeUpdate(
+    val id: Int,
+    @ColumnInfo(name = "finish_time") val finishTime: LocalDateTime,
+)
