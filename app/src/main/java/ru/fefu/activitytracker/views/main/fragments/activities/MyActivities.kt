@@ -97,7 +97,7 @@ class MyActivities:
     private fun myActivityClickListener(position: Int, activityData: IActivity) {
         val direction =
             ActivitiesDirections.
-            actionActivitiesFragmentToMyActivityInfo(activityData as MyActivity)
+            actionActivitiesFragmentToMyActivityInfo((activityData as MyActivity).id)
 
         findNavController().navigate(direction)
     }
