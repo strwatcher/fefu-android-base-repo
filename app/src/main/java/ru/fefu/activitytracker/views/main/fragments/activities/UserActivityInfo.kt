@@ -21,6 +21,7 @@ class UserActivityInfo:
         binding.tvDate.text = data.finishDate
         binding.tvUserName.text = data.userName
         binding.tvComment.text = data.userComment
+        binding.tvTime.text = data.duration
 
         binding.tbAction.setNavigationOnClickListener{
             findNavController().popBackStack()
