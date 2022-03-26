@@ -13,14 +13,15 @@ class MyActivityInfo:
     BaseFragment<MyActivityCardInfoBinding>(R.layout.my_activity_card_info) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        val data: MyActivity = requireArguments().get("Activity") as MyActivity
+        val activityId: Int = requireArguments().getInt("activityId")
+        val data: MyActivity = App.INSTANCE.database.activityDao().getById(activityId).toMyActivity()
 
         binding.tbAction.title = data.name
         binding.tvMetric.text = data.metric
         binding.tvStartTimeValue.text = data.startTime
         binding.tvFinishTimeValue.text = data.finishTime
         binding.tvDate.text = data.finishDate
+        binding.tvTime.text = data.duration
 
         binding.tbAction.setNavigationOnClickListener{
             findNavController().popBackStack()

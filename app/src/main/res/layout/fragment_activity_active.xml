@@ -8,7 +8,6 @@
         android:id="@+id/tvActivityType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Велосипед"
         android:textSize="24sp"
         android:textColor="@color/dark"
         android:textStyle="bold"
@@ -21,7 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="14 км"
         android:textSize="24sp"
         android:textColor="@color/dark"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,27 +27,15 @@
         />
 
     <TextView
+        android:id="@+id/tvTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:01:46"
         android:layout_marginTop="8dp"
         android:textColor="@color/dark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvActivityType" />
 
-    <ImageButton
-        android:id="@+id/bPause"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:backgroundTint="@color/light_pink"
-        android:background="@drawable/circle"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/ic_pause"
-        app:layout_constraintEnd_toStartOf="@id/bFinish"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDistance" />
 
     <ImageButton
         android:id="@+id/bFinish"
@@ -57,12 +43,11 @@
         android:layout_height="56dp"
         android:backgroundTint="@color/primary"
         android:background="@drawable/circle"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:src="@drawable/ic_flag"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toBottomOf="@id/tvDistance"
-        app:layout_constraintStart_toEndOf="@+id/bPause"
+        app:layout_constraintStart_toStartOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

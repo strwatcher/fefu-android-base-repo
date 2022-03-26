@@ -4,17 +4,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--Тут я так понимаю будет какой-нибудь MapView-->
-    <TextView
-        android:id="@+id/tvMap"
+    <org.osmdroid.views.MapView
+        android:id="@+id/mvMap"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#D2D2D2"
-        android:gravity="center"
-        android:text="Карта тут"
-        android:textAlignment="center"
-        android:textColor="@color/dark"
-        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

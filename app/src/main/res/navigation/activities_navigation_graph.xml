@@ -13,8 +13,8 @@
             app:destination="@id/myActivityInfo"
             app:launchSingleTop="false">
             <argument
-                android:name="Activity"
-                app:argType="ru.fefu.activitytracker.model.MyActivity"
+                android:name="activityId"
+                app:argType="integer"
                 />
         </action>
         <action
@@ -41,5 +41,10 @@
     <activity
         android:id="@+id/activityActivity"
         android:name="ru.fefu.activitytracker.views.activity.ActivityActivity"
-        android:label="ActivityActivity" />
+        android:label="ActivityActivity" >
+        <argument
+            android:name="activityId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </activity>
 </navigation>
